@@ -16,10 +16,10 @@ function FirstSection() {
 
   return (
     <section className="home">
-      <video className={`video-slide ${activeSlide === 0 ? 'active' : ''}`} src="/videos/oil.mp4" autoPlay muted loop></video>
+      <video className={`video-slide ${activeSlide === 0 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
       {/* Add other video slides similarly */}
-      <video className={`video-slide ${activeSlide === 1 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
-      <video className={`video-slide ${activeSlide === 2 ? 'active' : ''}`} src="/videos/3.mp4" autoPlay muted loop></video>
+      <video className={`video-slide ${activeSlide === 1 ? 'active' : ''}`} src="/videos/3.mp4" autoPlay muted loop></video>
+      <video className={`video-slide ${activeSlide === 2 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
       <video className={`video-slide ${activeSlide === 3 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video>
       <video className={`video-slide ${activeSlide === 4 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video>
 
