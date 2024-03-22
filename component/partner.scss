@@ -1,0 +1,95 @@
+.heading {
+    text-align: center;
+    color: #454343;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    z-index: 999;
+}
+.white-heading{
+    color: #ffffff;
+}
+.heading:after {
+    content: ' ';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 40px;
+    width: 180px;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    background: url(https://i.ibb.co/G32GT0L/heading-line.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.white-heading:after {
+    background: url(https://i.ibb.co/G32GT0L/heading-line.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.heading span {
+    font-size: 18px;
+    display: block;
+    font-weight: 500;
+}
+.white-heading span {
+    color: #ffffff;
+}
+
+
+
+$palette: (
+  background: #FFF,
+  foreground: #636e72,
+  primary: #22264b,
+  secondary: #b56969,
+);
+.container {
+    background: white;
+    color: map-get($palette, foreground);
+  }
+  
+
+.partners {
+  padding: 10px;
+}
+
+@-webkit-keyframes slideleft {
+  0% {
+    background-position: 385000px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+
+@keyframes slideleft {
+  0% {
+    background-position: 385000px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+
+.partners-img-container {
+  height: 100px;
+  width: 100%;
+  overflow: auto;
+}
+
+.partners-img-container::-webkit-scrollbar { width: 0 !important } /* hide scrollbar in Chrome */
+.partners-img-container { scrollbar-width: none; } /* hide scrollbar in mozilla */
+.partners-img-container { -ms-overflow-style: none; } /* hide scrollbar in IE */
+
+.partners-img-container .partners-img {
+  height: 100%;
+  width: 200%;
+  background: transparent url(https://squeeze-pics.s3-us-west-2.amazonaws.com/v2/assets/Web+Assets/heroes/Auto-insurance/insurancelogos.jpg) repeat-x 50% 0;
+  -webkit-animation: slideleft 5000s linear infinite;
+  animation: slideleft 5000s linear infinite;
+  cursor: grab;
+}
