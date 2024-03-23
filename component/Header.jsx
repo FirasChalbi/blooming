@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 function Header() {
@@ -16,11 +17,13 @@ function Header() {
       <div class="menu-btn"></div>
       <div class="navigation">
         <div class="navigation-items">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Explore</a>
-          <a href="#">Service</a>
-          <a href="#">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/propos">A PROPOS</Link>
+          <Link href="/">PRODUITS</Link>
+          <Link href="/">ASSISTANCE TECHNIQUE</Link>
+          <Link href="/">PARTENAIRES</Link>
+          <Link href="/service">SERVICES</Link>
+          <Link href="/contact">CONTACT</Link>
         </div>
       </div>
     </header>
