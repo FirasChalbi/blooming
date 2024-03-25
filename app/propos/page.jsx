@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../component/Header';
+import Header from '../../component/Header2';
 import AboutForPage from '../../component/AboutForPage';
 import TopTitle from "../../component/common/fields/TopTitle"
 import Index from "../../component/common/fields/Index"

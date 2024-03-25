@@ -6,7 +6,7 @@
     position: relative;
     margin-bottom: 70px;
     text-transform: uppercase;
-    z-index: 999;
+    
 }
 .white-heading{
     color: #ffffff;
@@ -90,6 +90,6 @@ $palette: (
   width: 200%;
   background: transparent url(https://squeeze-pics.s3-us-west-2.amazonaws.com/v2/assets/Web+Assets/heroes/Auto-insurance/insurancelogos.jpg) repeat-x 50% 0;
   -webkit-animation: slideleft 5000s linear infinite;
-  animation: slideleft 5000s linear infinite;
+  animation: slideleft 10000s linear infinite;
   cursor: grab;
 }
