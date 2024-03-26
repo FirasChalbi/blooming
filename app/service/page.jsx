@@ -17,7 +17,7 @@ function Page() {
           <p class="small">Blooming</p>
           <h2>Cultivating Quality and Productivity in Agriculture</h2>
           <p>
-          Notre mission est de fournir des solutions intégrées et de haute qualité pour une agriculture intelligente et hautement productive. Nous offrons un soutien et des conseils à toutes les étapes de la mise en œuvre du projet, dans le but d'améliorer la qualité de production et d'augmenter la productivité, tout en garantissant des rendements financiers pour nos investisseurs.
+          Notre mission est de fournir des solutions intégrées et de haute qualité pour une agriculture intelligente et hautement productive. Nous offrons un soutien et des conseils à toutes les étapes de la mise en œuvre du projet, dans le but d&rsquo;améliorer la qualité de production et d&rsquo;augmenter la productivité, tout en garantissant des rendements financiers pour nos investisseurs.
           </p>
         </div>
         <div class="about-img">
@@ -93,7 +93,7 @@ function Page() {
               </div>
 
               <div class="banner__text">
-                <h2>Installation de réseaux d'irrigation souterrains.</h2>
+                <h2>Installation de réseaux d&rsquo;irrigation souterrains.</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
 
                 <p class="banner__link-wrapper">
@@ -111,7 +111,7 @@ function Page() {
               </div>
 
               <div class="banner__text">
-                <h2>Installation de stations de filtration d'eau et de fertilisation.</h2>
+                <h2>Installation de stations de filtration d&rsquo;eau et de fertilisation.</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
 
                 <p class="banner__link-wrapper">
