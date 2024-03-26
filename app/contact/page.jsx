@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../component/Header2';
+import Footer from '../../component/Footer';
 import Contact from '../../component/Contact';
 import TopTitle from "../../component/common/fields/TopTitle"
 import Index from "../../component/common/fields/Index"
@@ -11,6 +12,7 @@ function Page() {
       <TopTitle title="Contact"/>
       <Index title="Contact"/>
       <Contact />
+      <Footer />
     </div>
   );
 }
