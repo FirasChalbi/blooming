@@ -12,7 +12,7 @@ import WeDo from "../component/plus/WeDo"
 import WeDo2 from "../component/plus/WeDo2"
 import WhyUs from "../component/plus/WhyUs"
 import Footer2 from "../component/Footer2"
-import AboutForPage from "@/component/Plus/AboutForPage2";
+import AboutForPage from "../component/Plus/AboutForPage2";
 import Whatsapp from "../component/common/Whatsapp"
 
 export default function Home() {
