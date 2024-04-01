@@ -15,7 +15,7 @@ function FirstSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(activeSlide => (activeSlide + 1) % 3); // Change 5 to the number of slides you have
-    }, 8000); // Change 5000 to the desired interval in milliseconds
+    }, 118000); // Change 5000 to the desired interval in milliseconds
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 
@@ -27,10 +27,10 @@ function FirstSection() {
       <video className={`video-slide ${activeSlide === 2 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
       {/* <video className={`video-slide ${activeSlide === 3 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video>
       <video className={`video-slide ${activeSlide === 4 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video> */}
-
       <div className={`content ${activeSlide === 0 ? 'active' : ''}`}>
-        <h1>Camping.<br /><span>Enjoy</span></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate reprehenderit in voluptate reprehenderit in voluptate.</p>
+      
+        <h1>Pure.<br /><span>Organic</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sapiente commodi maiores ullam..</p>
         <Button />
       </div>
       <div className={`content ${activeSlide === 1 ? 'active' : ''}`}>
@@ -43,6 +43,23 @@ function FirstSection() {
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <a href="#">Read More</a>
       </div>
+      {/* <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>
+      <div class="container22 HomePageHeroHeader">
+        <div class="main-content">
+          <div class="w3lbanner-left">
+            <h6>
+              Welcome to Agrowfarm            </h6>
+            <h4>
+              Pure Organic Products            </h4>
+            <a href="about" class="btn btn-style btn-secondary mt-md-5 mt-4">Read More</a>
+          </div>
+          <div class="w3lbanner-right">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sapiente commodi maiores ullam.            </p>
+          </div>
+        </div>
+      </div>
+      </div> */}
       {/* <div className={`content ${activeSlide === 3 ? 'active' : ''}`}>
         <h1>Road Trip.<br /><span>Together</span></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

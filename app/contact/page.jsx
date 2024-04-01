@@ -4,6 +4,7 @@ import Footer from '../../component/Footer';
 import Contact from '../../component/Contact';
 import TopTitle from "../../component/common/fields/TopTitle"
 import Index from "../../component/common/fields/Index"
+import Whatsapp from "../../component/common/Whatsapp"
 
 function Page() {
   return (
@@ -13,6 +14,7 @@ function Page() {
       <Index title="Contact"/>
       <Contact />
       <Footer />
+      <Whatsapp />
     </div>
   );
 }

@@ -6,9 +6,11 @@ function AboutForPage() {
     <div className="containerAbout">
   <div className="contentLeft">
     <div className="row">
-        <div className="imgWrapper">
-            <img src="https://images.unsplash.com/photo-1687579521048-217e24217d53?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg5ODcxNzl8&ixlib=rb-4.0.3&q=85" alt=""/>
-        </div>
+    <div className=" md:hidden">
+  <div className="imgWrapper">
+    <img src="/images/a1.jpg" alt=""/>
+  </div>
+</div>
         <div className="imgWrapper">
             <img src="https://images.unsplash.com/photo-1686580546412-80e80519abd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg5ODcyMDN8&ixlib=rb-4.0.3&q=85" alt=""/>
         </div>
@@ -20,7 +22,7 @@ function AboutForPage() {
         </div>
     </div>
   </div>
-  <div className="contentRight">
+  <div className="contentRight md:ml-10">
     <div className="content">
       <h4>Welcome To</h4>
       <h2>About Us Title...</h2>

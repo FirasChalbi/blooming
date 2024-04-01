@@ -3,7 +3,7 @@ import "./partner.scss"
 function Partner() {
   return (
 
-<div class='container' style={{paddingTop: "50px"}}>
+<div class='container11' style={{paddingTop: "50px"}} id="partenaires">
   
   <section class='partners'>
   <div class="heading" >

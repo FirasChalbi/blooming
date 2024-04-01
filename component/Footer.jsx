@@ -22,7 +22,7 @@ function Footer() {
               <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
             </div>
 
-            <div className="col-lg-3 col-md-6 footer-links">
+            {/* <div className="col-lg-3 col-md-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
                 <li><FaChevronRight /> <a href="#" >Home</a></li>
@@ -31,7 +31,7 @@ function Footer() {
                 <li><FaChevronRight /> <a href="#">Terms of service</a></li>
                 <li><FaChevronRight /> <a href="#">Privacy policy</a></li>
               </ul>
-            </div>
+            </div> */}
 
             <div className="col-lg-3 col-md-6 footer-contact">
               <h4>Contact Us</h4>
@@ -64,14 +64,14 @@ function Footer() {
         </div>
       </div>
 
-      <div className="container3">
+      {/* <div className="container3">
         <div className="copyright">
           &copy; Copyright <strong>Page</strong>. All Rights Reserved
         </div>
         <div className="credits">
           Designed by <a href="https://a.com/">Page</a>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }

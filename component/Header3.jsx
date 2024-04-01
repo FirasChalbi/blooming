@@ -58,7 +58,7 @@ import Link from 'next/link';
     };
 
     return (
-      <header className={scrolled ? `${styles.header} ${styles.headerScrolled}` : styles.header}>
+        <header className={`${scrolled ? `${styles.header} ${styles.headerScrolled}` : styles.header} bg-[#00000000]`}>
         <div className="container-fluid">
           <div className="row11 justify-center items-center">
             <div className="col-xl-11 flex items-center w-max">

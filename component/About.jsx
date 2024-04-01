@@ -4,8 +4,8 @@ import Button from "../component/common/buttons/Button"
 function About() {
   return (
     <section className="about-section">
-        <div className="container">
-            <div className="row">                
+        <div className="container11">
+            <div className="row11">                
                 <div className="content-column col-lg-6 col-md-12 col-sm-12 order-2">
                     <div className="inner-column">
                         <div className="sec-title">
