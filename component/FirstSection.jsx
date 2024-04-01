@@ -15,7 +15,7 @@ function FirstSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(activeSlide => (activeSlide + 1) % 3); // Change 5 to the number of slides you have
-    }, 118000); // Change 5000 to the desired interval in milliseconds
+    }, 8000); // Change 5000 to the desired interval in milliseconds
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 

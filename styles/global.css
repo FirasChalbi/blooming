@@ -881,7 +881,11 @@ body {
 /* About for page */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+@media (max-width: 1040px){
+  .AboutP{
+    height: 901PX;
+  }
+}
 .AboutP{
   width: 100%;
   min-height: 100vh;
@@ -2222,7 +2226,8 @@ p.vhny-para {
 }
 
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");.AboutP {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.AboutP {
   width: 100%;
   min-height: 100vh;
   display: grid;
@@ -2752,3 +2757,39 @@ flex-direction: row;
   .my-float{
     margin-top:16px;
   }
+
+  /* Pop Up Style */
+.video-pop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9;
+}
+.video-pop:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.pop-bg {
+  background: rgba(0, 0, 0, 0.603);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pop-container {
+  width: 50%;
+  text-align: right;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2e1717;
+}
+.pop-container iframe {
+  width: 100%;
+  height: 450px;
+}
