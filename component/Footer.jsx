@@ -12,7 +12,7 @@ function Footer() {
               <h3>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "left", paddingBottom: "20px" }}>
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logob.png"
                     width={90}
                     height={90}
                     alt="Picture of the author"
