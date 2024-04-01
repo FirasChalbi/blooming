@@ -63,7 +63,7 @@ import Link from 'next/link';
           <div className="row11 justify-center items-center">
             <div className="col-xl-11 flex items-center w-max">
               <Link href="/" passHref className='space'><Image
-                src="/images/logo.png"
+                src="/images/logobb.png"
                 width={70}
                 height={70}
                 alt="Picture of the author"

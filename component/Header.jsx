@@ -29,7 +29,7 @@ function Header() {
   return (
     <header className={scrolled ? `${styles.header} ${styles.headerScrolled}` : styles.header}>
       <Image
-      src="/images/logo.png"
+      src="/images/logob.png"
       width={70}
       height={70}
       alt="Picture of the author"
