@@ -956,7 +956,7 @@ body {
 .contentRight .content h4{
     font-size: 22px;
     font-weight: 400;
-    color: #d35400;
+    color: #46C7C7;    ;
 }
 .contentRight .content h2{
     font-size: 40px;
@@ -1593,11 +1593,7 @@ body {
   animation: about-img-animation 1s ease-in-out forwards;
   overflow-y: hidden;
 }
-.contentRight{
-  transform: translateX(150%);
-  animation: about-img-animation 1s ease-in-out forwards;
-  overflow-y: hidden;
-}
+
 /* .containerAbout {
   overflow-x: hidden;
 }
@@ -2274,7 +2270,6 @@ p.vhny-para {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  transition: .3s ease
 }
 
 .contentLeft .row .imgWrapper:hover img {
@@ -2299,7 +2294,7 @@ p.vhny-para {
 .contentRight .content h4 {
   font-size: 22px;
   font-weight: 400;
-  color: #d35400
+  color: #46C7C7;
 }
 
 .contentRight .content h2 {

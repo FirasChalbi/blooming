@@ -9,7 +9,7 @@ function AboutForPage() {
     <div className="containerAbout">
   <div className="contentRight">
     <div className="content md:mt-[-55px]">
-      <h4>PRESENTATION</h4>
+      <h4 style={{textTransform:"uppercase"}}>PRéSENTATION</h4>
       <h2>Qui sommes nous?</h2>
       <p className='d pr-7'>Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.<br/>
       Qui font référence à un système d’implémentation qui vise à unifier les intérêts, les objectifs et les pratiques, même au sein de projets

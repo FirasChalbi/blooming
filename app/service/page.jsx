@@ -17,7 +17,7 @@ function Page() {
           <p class="small">Blooming</p>
           <h2 style={{fontWeight:"700", color:"#016795"}}>Cultiver la qualité et la productivité en agriculture</h2>
           <p>
-          Blooming propose une gamme complète de services agricoles, de l'étude à l'assistance technique. Nous offrons aux investisseurs une solution clé en main, avec un suivi personnalisé à chaque étape de leur projet.<br/>Nos équipes hautement qualifiées assurent une prise en charge totale et utilisent les dernières technologies pour améliorer les performances des exploitations agricoles, augmenter les rendements et réduire la consommation d'énergie et de main-d'œuvre.
+          Blooming propose une gamme complète de services agricoles, de l&apos;étude à l&apos;assistance technique. Nous offrons aux investisseurs une solution clé en main, avec un suivi personnalisé à chaque étape de leur projet.<br/>Nos équipes hautement qualifiées assurent une prise en charge totale et utilisent les dernières technologies pour améliorer les performances des exploitations agricoles, augmenter les rendements et réduire la consommation d&apos;énergie et de main-d&apos;œuvre.
           </p>
         </div>
         <div class="about-img">
@@ -94,7 +94,7 @@ function Page() {
 
               <div class="banner__text">
                 <h2>Installation de réseaux d&rsquo;irrigation souterrains.</h2>
-                <p>Mettez en place des systèmes d'irrigation sophistiqués et discrets pour assurer une distribution efficace de l'eau aux cultures.</p>
+                <p>Mettez en place des systèmes d&apos;irrigation sophistiqués et discrets pour assurer une distribution efficace de l&apos;eau aux cultures.</p>
 
                 <p class="banner__link-wrapper">
                   <span class="banner__link">
@@ -112,7 +112,7 @@ function Page() {
 
               <div class="banner__text">
                 <h2>Installation de stations de filtration d&rsquo;eau et de fertilisation.</h2>
-                <p>Pour garantir la qualité de l'eau et fournir des nutriments essentiels aux cultures.</p>
+                <p>Pour garantir la qualité de l&apos;eau et fournir des nutriments essentiels aux cultures.</p>
 
                 <p class="banner__link-wrapper">
                   <span class="banner__link">
