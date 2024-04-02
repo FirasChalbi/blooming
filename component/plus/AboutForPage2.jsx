@@ -9,21 +9,25 @@ function AboutForPage() {
     <div className="containerAbout">
   <div className="contentRight">
     <div className="content md:mt-[-55px]">
-      <h4>OUR INFO</h4>
-      <h2>Agriculture & Organic Product Form</h2>
-      <p className='d pr-7'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ullamco laboris.</p>
+      <h4>PRESENTATION</h4>
+      <h2>Qui sommes nous?</h2>
+      <p className='d pr-7'>Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.<br/>
+      Qui font référence à un système d’implémentation qui vise à unifier les intérêts, les objectifs et les pratiques, même au sein de projets
+individuels, grâce à un processus basé sur le travail
+d'une équipe complète.
+</p>
       <List spacing={15} textColor="black" fontSize="medium" fontWeight="500">
         <ListItem className="flex items-center">
             <ListIcon as={MdCheckCircle} color='green.500' className="mr-2" />
-            Lorem ipsum dolor sit amet
+            Meilleure qualite 
         </ListItem>
         <ListItem className="flex items-center">
             <ListIcon as={MdCheckCircle} color='green.500' className="mr-2" />
-            Lorem ipsum dolor sit amet
+            Prix imbattable
         </ListItem>
         <ListItem className="flex items-center">
             <ListIcon as={MdCheckCircle} color='green.500' className="mr-2" />
-            Lorem ipsum dolor sit amet
+            Satisfaction client
         </ListItem>
         </List>
       

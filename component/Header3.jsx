@@ -76,7 +76,7 @@ import Link from 'next/link';
                   <li><Link className="nav-link scrollto" href="/propos">A PROPOS</Link></li>
                   {/* <li><Link className="nav-link scrollto" href="/produits">PRODUITS</Link></li> */}
                   <li className="dropdown">
-                    <a href="#" onClick={() => toggleDropdown('dropdown1')}>
+                    <a href="/product" onClick={() => toggleDropdown('dropdown1')}>
                       <span className=' pr-2'>PRODUITS</span> <FaChevronDown />
                     </a>
                     <ul className={dropdownActive === 'dropdown1' ? 'dropdown-active' : ''}>

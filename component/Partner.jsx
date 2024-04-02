@@ -7,7 +7,7 @@ function Partner() {
   
   <section class='partners'>
   <div class="heading" >
-                Partner
+              Nos Partenaires
             </div>
     <div class='partners-img-container' style={{paddingBottom: "40px"}}>
       <div class='partners-img'></div>

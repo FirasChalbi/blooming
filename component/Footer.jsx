@@ -19,7 +19,7 @@ function Footer() {
                   />
                 </div>
               </h3>
-              <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+              <p>Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.</p>
             </div>
 
             {/* <div className="col-lg-3 col-md-6 footer-links">
@@ -36,11 +36,11 @@ function Footer() {
             <div className="col-lg-3 col-md-6 footer-contact">
               <h4>Contact Us</h4>
               <p>
-                A108 Street <br />
-                Sfax, 535022<br />
-                Tunisia <br />
-                <strong>Phone:</strong> +1 5589 55488 55<br />
-                <strong>Email:</strong> info@example.com<br />
+                Route de gabes km 1.5<br />
+                Sfax 3000,
+                Tunisie <br />
+                <strong>Phone:</strong> +216 23 411 941 <strong style={{color:"#46C7C7"}}>|</strong> +216 52 962 066<br />
+                <strong>Email:</strong> direction@blooming-agriafrica.tn<br />
               </p>
 
               <div className="social-links">
@@ -54,9 +54,9 @@ function Footer() {
 
             <div className="col-lg-3 col-md-6 footer-newsletter">
               <h4>Our Newsletter</h4>
-              <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+              <p>Inscrivez-vous à notre Newsletter et recevez nos offres exclusives.</p>
               <form action="" method="post">
-                <input type="email" name="email" /><input type="submit" value="Subscribe" />
+                <input type="email" name="email" /><input type="submit" value="S'INSCRIRE" />
               </form>
             </div>
 

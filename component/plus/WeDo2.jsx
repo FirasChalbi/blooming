@@ -5,8 +5,8 @@ function WeDo2() {
     <section className="w3l-grids-3hny py-5 bg-[#f5f9f7] pt-14 pb-14" id="grids1">
       <div className="container py-lg-5 py-md-3 HomePageServices">
         <div className="wthree-header-section text-center">
-          <h6 className="title-subw3hny"> What We Do</h6>
-          <h3 className="title-w3l mb-6 text-black cool"> What We’re Offering</h3>
+          <h6 className="title-subw3hny"> Qu'est ce que en fait</h6>
+          <h3 className="title-w3l mb-6 text-black cool">Nos Services</h3>
         </div>
         <div className=" text-center WeDoCard">
           <div className="col-lg-4 col-md-6 mt-5">
@@ -16,7 +16,7 @@ function WeDo2() {
               </a>
               <div className="grids-of-3-saas-info" >
                 <h5>
-                  <a href="#url" className="title" style={{ backgroundColor:"white", color:"black",fontSize:"large"}}>Agriculture Leader</a>
+                  <a href="#url" className="title" style={{ backgroundColor:"white", color:"black",fontSize:"large"}}>Projets clé en main</a>
                 </h5>
                 <p className="saas-para text-black"> Venenatis eros et, sed commodo risus. Nullam sit amet laoreet elit.</p>
               </div>
@@ -29,9 +29,9 @@ function WeDo2() {
               </a>
               <div className="grids-of-3-saas-info">
                 <h5>
-                  <a href="#url" className="title" style={{ backgroundColor:"white", color:"black",fontSize:"large"}}>Quality Standards</a>
+                  <a href="#url" className="title" style={{ backgroundColor:"white", color:"black",fontSize:"large"}}>Assistance technique</a>
                 </h5>
-                <p className="saas-para text-black"> Venenatis eros et, sed commodo risus. Nullam sit amet laoreet elit.</p>
+                <p className="saas-para text-black">Avant et pendant la mise en œuvre du projet, basée sur des technologies avancées.</p>
               </div>
             </div>
           </div>
@@ -42,9 +42,9 @@ function WeDo2() {
               </a>
               <div className="grids-of-3-saas-info">
                 <h5>
-                  <a href="#url" className="title" style={{ backgroundColor:"white", color:"black",fontSize:"large"}}>Organic Services</a>
+                  <a href="#url" className="title" style={{ backgroundColor:"white", color:"black",fontSize:"large"}}>Préparation de la terre</a>
                 </h5>
-                <p className="saas-para text-black"> Venenatis eros et, sed commodo risus. Nullam sit amet laoreet elit.</p>
+                <p className="saas-para text-black">Par labourage en profondeur et analyse du sol.</p>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ function WeDo2() {
       <a href="/service" >
       <p class="banner__link-wrapper text-center">
                   <span class="banner__link">
-                    <i>See More</i>
+                    <i>Voir Plus</i>
                   </span>
                 </p>
                 </a>

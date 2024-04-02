@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Button from "../component/common/buttons/Button"
 import bvideo from '../public/videos/bvideo.mp4';
 
+
 function FirstSection() {
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -15,7 +16,7 @@ function FirstSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(activeSlide => (activeSlide + 1) % 3); // Change 5 to the number of slides you have
-    }, 8000); // Change 5000 to the desired interval in milliseconds
+    }, 800000); // Change 5000 to the desired interval in milliseconds
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 
@@ -27,21 +28,20 @@ function FirstSection() {
       <video className={`video-slide ${activeSlide === 2 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
       {/* <video className={`video-slide ${activeSlide === 3 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video>
       <video className={`video-slide ${activeSlide === 4 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video> */}
-      <div className={`content ${activeSlide === 0 ? 'active' : ''}`}>
-      
-        <h1>Pure.<br /><span>Organic</span></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sapiente commodi maiores ullam..</p>
-        <Button />
-      </div>
       <div className={`content ${activeSlide === 1 ? 'active' : ''}`}>
-      <h1>Wonder.<br /><span>Island</span></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate reprehenderit in voluptate reprehenderit in voluptate.</p>
-        <a href="#">Read More</a>
+      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
+      <h1>Pure Organic<br/><span>Products</span></h1>
+      <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Read More</a>
       </div>
       <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>
-      <h1>Wonder.<br /><span>Island</span></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a href="#">Read More</a>
+      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
+      <h1>Pure Organic<br/><span>Products</span></h1>
+      <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Read More</a>
+      </div>
+      <div className={`content ${activeSlide === 0 ? 'active' : ''}`}>
+      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
+      <h1>Pure Organic<br/><span>Products</span></h1>
+      <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7", borderRadius:"20px"}}>Read More</a>
       </div>
       {/* <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>
       <div class="container22 HomePageHeroHeader">

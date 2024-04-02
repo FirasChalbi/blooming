@@ -15,9 +15,9 @@ function Page() {
       <div class="about-wrapper container6">
         <div class="about-text">
           <p class="small">Blooming</p>
-          <h2>Cultivating Quality and Productivity in Agriculture</h2>
+          <h2 style={{fontWeight:"700", color:"#016795"}}>Cultiver la qualité et la productivité en agriculture</h2>
           <p>
-          Notre mission est de fournir des solutions intégrées et de haute qualité pour une agriculture intelligente et hautement productive. Nous offrons un soutien et des conseils à toutes les étapes de la mise en œuvre du projet, dans le but d&rsquo;améliorer la qualité de production et d&rsquo;augmenter la productivité, tout en garantissant des rendements financiers pour nos investisseurs.
+          Blooming propose une gamme complète de services agricoles, de l'étude à l'assistance technique. Nous offrons aux investisseurs une solution clé en main, avec un suivi personnalisé à chaque étape de leur projet.<br/>Nos équipes hautement qualifiées assurent une prise en charge totale et utilisent les dernières technologies pour améliorer les performances des exploitations agricoles, augmenter les rendements et réduire la consommation d'énergie et de main-d'œuvre.
           </p>
         </div>
         <div class="about-img">
@@ -30,7 +30,7 @@ function Page() {
           SERVICES
         </p>
     <h3 class="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
-          Our<span style={{color:"#46C7C7"}}> Services</span>
+          Nos<span style={{color:"#46C7C7"}}> Services</span>
         </h3>
         <a href="#0" class="banner mb-7" aria-label="Shop now">
             <div class="banner__grid">
@@ -40,7 +40,7 @@ function Page() {
 
               <div class="banner__text">
                 <h2>Projets clé en main</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                <p>Offrez des solutions complètes et sur mesure pour les projets agricoles, de la conception à la réalisation.</p>
 
                 <p class="banner__link-wrapper">
                   <span class="banner__link">
@@ -58,7 +58,7 @@ function Page() {
 
               <div class="banner__text">
                 <h2>Assistance technique</h2>
-                <p>Assistance technique avant et pendant la mise en œuvre du projet, basée sur des technologies avancées. </p>
+                <p>Avant et pendant la mise en œuvre du projet, basée sur des technologies avancées. </p>
 
                 <p class="banner__link-wrapper">
                   <span class="banner__link">
@@ -76,7 +76,7 @@ function Page() {
 
               <div class="banner__text">
                 <h2>Préparation de la terre</h2>
-                <p>Préparation de la terre par labourage en profondeur et analyse du sol. </p>
+                <p>Par labourage en profondeur et analyse du sol. </p>
 
                 <p class="banner__link-wrapper">
                   <span class="banner__link">
@@ -94,7 +94,7 @@ function Page() {
 
               <div class="banner__text">
                 <h2>Installation de réseaux d&rsquo;irrigation souterrains.</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                <p>Mettez en place des systèmes d'irrigation sophistiqués et discrets pour assurer une distribution efficace de l'eau aux cultures.</p>
 
                 <p class="banner__link-wrapper">
                   <span class="banner__link">
@@ -112,7 +112,7 @@ function Page() {
 
               <div class="banner__text">
                 <h2>Installation de stations de filtration d&rsquo;eau et de fertilisation.</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                <p>Pour garantir la qualité de l'eau et fournir des nutriments essentiels aux cultures.</p>
 
                 <p class="banner__link-wrapper">
                   <span class="banner__link">
