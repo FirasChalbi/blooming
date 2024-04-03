@@ -9,7 +9,7 @@ function WhyUs() {
             <img src="https://wp.w3layouts.com/agrowfarm/wp-content/themes/agrowfarm/assets/images/a5.jpg" alt="" className="radius-image img-fluid"/>
           </div>
           <div className="col-lg-6 circles-right mt-lg-0 mt-5 align-self position-relative pad">
-            <h6 className="title-subw3hny">Why Us</h6>
+            <h6 className="title-subw3hny">Pourquoi Nous</h6>
             <h3 className="title-w3l mb-4 text-black">Assistance technique</h3>
             <p className="mb-5 text-black" >
 Notre équipe d'experts qualifiés se tient à disposition pour offrir conseils et assistance personnalisés aux clients et visiteurs dans le choix des solutions agricoles les mieux adaptées à leurs projets spécifiques. Blooming fournit un équipement de pointe et des fertilisants de qualité pour répondre aux besoins uniques de chaque exploitation, tout en garantissant l'efficacité et le succès des initiatives agricoles.</p>

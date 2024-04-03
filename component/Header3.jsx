@@ -72,7 +72,7 @@ import Link from 'next/link';
 
               <nav id="navbar" className={`navbar ${isMobileNavbarOpen ? 'navbar-mobile' : ''} ${scrolled ? 'black' : ''}`}>
                 <ul className={`${scrolled ? 'black' : ''}`}>
-                  <li><Link className="nav-link scrollto active" href="/">Home</Link></li>
+                  <li><Link className="nav-link scrollto active" href="/">ACCUEIL</Link></li>
                   <li><Link className="nav-link scrollto" href="/propos">A PROPOS</Link></li>
                   {/* <li><Link className="nav-link scrollto" href="/produits">PRODUITS</Link></li> */}
                   <li className="dropdown">
@@ -101,7 +101,6 @@ import Link from 'next/link';
                   <li><a className="nav-link scrollto" href="#assistance" onClick={(e) => scrollToCenter('assistance', e)}>ASSISTANCE TECHNIQUE</a></li>
 
                   <li><Link className="nav-link scrollto" href="/#partenaires" onClick={(e) => scrollToCenter('partenaires', e)}>PARTENAIRES</Link></li>
-                  <li><Link className="nav-link  " href="/service">SERVICES</Link></li>
                   <li><Link className="nav-link  " href="/service">SERVICES</Link></li>
                   
                   <li><a className="nav-link scrollto" href="/contact">CONTACT</a></li>

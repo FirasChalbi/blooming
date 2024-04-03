@@ -28,17 +28,17 @@ function FirstSection() {
       <video className={`video-slide ${activeSlide === 2 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
       {/* <video className={`video-slide ${activeSlide === 3 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video>
       <video className={`video-slide ${activeSlide === 4 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video> */}
-      <div className={`content ${activeSlide === 1 ? 'active' : ''}`}>
-      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
-      <h1>Pure Organic<br/><span>Products</span></h1>
-      <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Read More</a>
+      <div className={`content ${activeSlide === 0 ? 'active' : ''}`}>
+      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white", textTransform: "uppercase"}}>Bienvenue à</span> BLOOMING</h1>
+      <h1>Agriculture Durable<br/><span>Rentable</span></h1>
+      <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
       <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>
       <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
       <h1>Pure Organic<br/><span>Products</span></h1>
-      <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Read More</a>
+      <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
-      <div className={`content ${activeSlide === 0 ? 'active' : ''}`}>
+      <div className={`content ${activeSlide === 1 ? 'active' : ''}`}>
       <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
       <h1>Pure Organic<br/><span>Products</span></h1>
       <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7", borderRadius:"20px"}}>Read More</a>

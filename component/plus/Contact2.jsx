@@ -1,0 +1,104 @@
+import React from 'react';
+import { BiPaperPlane } from "react-icons/bi";
+import { Flex } from '@chakra-ui/react';
+import { FaMapLocationDot } from "react-icons/fa6";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+export default function Contact2() {
+  return (
+    <>
+      <section className="w3l-contact-main pt-[50px]" id="contact">
+        <div className="contact-infhny py-5">
+          <div className="container py-md-5 ContactPageForm">
+            <div className="title-content text-center mb-3">
+              <h6 className="title-subw3hny"> Send us a message </h6>
+              <h3 className="title-w3l mx-lg-5 text-black"> Keep In Touch With Us. </h3>
+              <p className="text-para mt-2"> Progressively syndicate user-centric schemas without front-end synergy. Monotonectally envisioneer. </p>
+            </div>
+            <div className="top-map">
+              <div className="map-content-9">
+                <form action="" method="post">
+                  <div className="form-top1">
+                    <div className="form-top">
+                      <div className="form-top-righ">
+                        <textarea className="w-full p-2 border rounded-md" name="w3lMessage" id="w3lMessage" placeholder="Message*" required=""></textarea>
+                      </div>
+                      <div className="form-top-left">
+                        <input className="w-full p-2 mb-2 border rounded-md" type="text" name="w3lName" id="w3lName" placeholder="Name" required="" />
+                        <input className="w-full p-2 mb-2 border rounded-md" type="tel" name="w3lPhone" placeholder="Your phone number" required="" />
+                        <input className="w-full p-2 mb-2 border rounded-md" type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="" />
+                      </div>
+                    </div>
+                    <div className="text-center mt-5">
+                      <button type="submit" className="btn btn-style btn-primary bg-[#46C7C7] "><Flex gap={10} color="white">Submit Now <BiPaperPlane className="text-xl mt-[-2px]"/></Flex></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w3l-contact-main pt-[10px]" id="contact">
+        <div className="container ContactPageMap">
+          <div className="map pt-lg-3">
+            <iframe className="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d528736.411358302!2d9.413343061630347!3d34.85161209659349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ef44783e1f73d1%3A0x3d62aae3b53d8199!2sTunisia!5e0!3m2!1sen!2sin!4v1570181661801!5m2!1sen!2sin" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section className="w3l-contact-main w3l-contact-info py-5 pb-10" id="contact">
+        <div className="midd-w3 py-md-5">
+          <div className="container ContactPageDetails">
+            <div className="row3 contact-infos pt-lg-4">
+              <div className="col-lg-4 col-md-6 pe-lg-5">
+                <div className="single-contact-infos">
+                  <div className="icon-box">
+                    <span className="fas fa-map-marked-alt"><FaMapLocationDot /></span>
+                  </div>
+                  <div className="text-box">
+                    <h3 className="mb-2 text-black">Location</h3>
+                    <p>Blooming, Route de gabes km 1.5 Sfax 3000, Tunisie.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 mt-md-0 ">
+                <div className="single-contact-infos">
+                  <div className="icon-box">
+                    <span className="fas fa-envelope-open-text"><FaPhoneVolume /></span>
+                  </div>
+                  <div className="text-box">
+                    <h3 className="mb-2 text-black">Phone Numbers</h3>
+                    <p>
+                      <a href="tel:+12 403-11-22-69">+216 23 411 941</a>
+                    </p>
+                    <p>
+                      <a href="tel:+12 304-11-22-79">+216 52 962 066</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                <div className="single-contact-infos">
+                  <div className="icon-box">
+                    <span className="fas fa-blender-phone"><MdEmail /></span>
+                  </div>
+                  <div className="text-box">
+                    <h3 className="mb-2 text-black">Emails</h3>
+                    <p>
+                      <a href="mailto:company@gmail.com">direction@blooming-agriafrica.tn</a>
+                    </p>
+                    <p>
+                      <a href="mailto:support@gmail.com">support@gmail.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

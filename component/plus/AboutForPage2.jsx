@@ -2,7 +2,7 @@
 import React from 'react'
 import {Container ,Flex, Text, List, ListItem, ListIcon, Image} from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
-
+import { AiFillCheckCircle } from "react-icons/ai";
 function AboutForPage() {
   return (
     <div className='AboutP bg-white' >
@@ -18,15 +18,15 @@ d'une équipe complète.
 </p>
       <List spacing={15} textColor="black" fontSize="medium" fontWeight="500">
         <ListItem className="flex items-center">
-            <ListIcon as={MdCheckCircle} color='green.500' className="mr-2" />
+            <ListIcon as={AiFillCheckCircle} color='#46C7C7' className="mr-2 mb-1" />
             Meilleure qualite 
         </ListItem>
         <ListItem className="flex items-center">
-            <ListIcon as={MdCheckCircle} color='green.500' className="mr-2" />
+            <ListIcon as={AiFillCheckCircle} color='#46C7C7' className="mr-2 mb-1" />
             Prix imbattable
         </ListItem>
         <ListItem className="flex items-center">
-            <ListIcon as={MdCheckCircle} color='green.500' className="mr-2" />
+            <ListIcon as={AiFillCheckCircle} color='#46C7C7' className="mr-2 mb-1" />
             Satisfaction client
         </ListItem>
         </List>

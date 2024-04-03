@@ -1,16 +1,16 @@
 import React from 'react';
-
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin,FaChevronRight } from 'react-icons/fa';
 function Contact() {
   return (
     <div className="contact-wrap" style={{marginBottom: "100px", marginTop: "30px"}}>
       <div className="contact-in">
         <h1>Contact Info</h1>
         <h2><i className="fa fa-phone" aria-hidden="true"></i> Phone</h2>
-        <p>123-456-789</p>
+        <p>+216 23 411 941 <strong style={{color:"#46C7C7"}}>|</strong> +216 52 962 066<br /></p>
         <h2><i className="fa fa-envelope" aria-hidden="true"></i> Email</h2>
-        <p>info@democompany.com</p>
+        <p>direction@blooming-agriafrica.tn</p>
         <h2><i className="fa fa-map-marker" aria-hidden="true"></i> Address</h2>
-        <p>Madina, Sfax, Tunisia</p>
+        <p>Route de gabes km 1.5, Sfax, Tunisia</p>
         <ul>
           <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
           <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
