@@ -28,7 +28,7 @@ import Link from 'next/link';
     useEffect(() => {
       const handleScroll = () => {
         const offset = window.scrollY;
-        if (offset > 200) {
+        if (offset > 140) {
           setScrolled(true);
         } else {
           setScrolled(false);
