@@ -55,8 +55,8 @@ function Page() {
           </Box>
         </Box>
 
-        {/* Button to Open Drawer */}
-        <Button onClick={onOpen}>Open Drawer</Button>
+        {/* Button to Open Drawer
+        <Button onClick={onOpen}>Open Drawer</Button> */}
 
         
 
@@ -75,7 +75,7 @@ function Page() {
       <Footer />
     </div>
     {/* Drawer Component */}
-    <Drawer
+    {/* <Drawer
           isOpen={isOpen}
           placement="right"
           onClose={onClose}
@@ -87,9 +87,9 @@ function Page() {
             <DrawerHeader>Drawer Example</DrawerHeader>
             <DrawerBody>
               {/* Your drawer content here */}
-            </DrawerBody>
+            {/* </DrawerBody>
           </DrawerContent>
-        </Drawer>
+        </Drawer> */} 
     </>
   );
 }
