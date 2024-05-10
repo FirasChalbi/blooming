@@ -11,9 +11,9 @@ export default function Contact2() {
         <div className="contact-infhny py-5">
           <div className="container py-md-5 ContactPageForm">
             <div className="title-content text-center mb-3">
-              <h6 className="title-subw3hny"> Send us a message </h6>
-              <h3 className="title-w3l mx-lg-5 text-black"> Keep In Touch With Us. </h3>
-              <p className="text-para mt-2"> Progressively syndicate user-centric schemas without front-end synergy. Monotonectally envisioneer. </p>
+              <h6 className="title-subw3hny"> Envoyez-nous un message </h6>
+              <h3 className="title-w3l mx-lg-5 text-black"> Restez En Contact Avec Nous. </h3>
+              <p className="text-para mt-2"> N'hésitez pas à nous contacter pour toute question, commentaire ou demande d'informations que vous pourriez avoir. Nous sommes là pour vous aider et impatients de vous entendre ! </p>
             </div>
             <div className="top-map">
               <div className="map-content-9">
@@ -24,13 +24,13 @@ export default function Contact2() {
                         <textarea className="w-full p-2 border rounded-md" name="w3lMessage" id="w3lMessage" placeholder="Message*" required=""></textarea>
                       </div>
                       <div className="form-top-left">
-                        <input className="w-full p-2 mb-2 border rounded-md" type="text" name="w3lName" id="w3lName" placeholder="Name" required="" />
-                        <input className="w-full p-2 mb-2 border rounded-md" type="tel" name="w3lPhone" placeholder="Your phone number" required="" />
+                        <input className="w-full p-2 mb-2 border rounded-md" type="text" name="w3lName" id="w3lName" placeholder="Nom" required="" />
+                        <input className="w-full p-2 mb-2 border rounded-md" type="tel" name="w3lPhone" placeholder="Votre numéro de téléphone" required="" />
                         <input className="w-full p-2 mb-2 border rounded-md" type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="" />
                       </div>
                     </div>
                     <div className="text-center mt-5">
-                      <button type="submit" className="btn btn-style btn-primary bg-[#46C7C7] "><Flex gap={10} color="white">Submit Now <BiPaperPlane className="text-xl mt-[-2px]"/></Flex></button>
+                      <button type="submit" className="btn btn-style btn-primary bg-[#46C7C7] "><Flex gap={10} color="white">Envoyer Maintenant <BiPaperPlane className="text-xl mt-[-2px]"/></Flex></button>
                     </div>
                   </div>
                 </form>
@@ -58,7 +58,7 @@ export default function Contact2() {
                     <span className="fas fa-map-marked-alt"><FaMapLocationDot /></span>
                   </div>
                   <div className="text-box">
-                    <h3 className="mb-2 text-black">Location</h3>
+                    <h3 className="mb-2 text-black">Localisation</h3>
                     <p>Blooming, Route de gabes km 1.5 Sfax 3000, Tunisie.</p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function Contact2() {
                     <span className="fas fa-envelope-open-text"><FaPhoneVolume /></span>
                   </div>
                   <div className="text-box">
-                    <h3 className="mb-2 text-black">Phone Numbers</h3>
+                    <h3 className="mb-2 text-black">Numéros</h3>
                     <p>
                       <a href="tel:+12 403-11-22-69">+216 23 411 941</a>
                     </p>
@@ -90,7 +90,7 @@ export default function Contact2() {
                       <a href="mailto:company@gmail.com">direction@blooming-agriafrica.tn</a>
                     </p>
                     <p>
-                      <a href="mailto:support@gmail.com">support@gmail.com</a>
+                      <a href="mailto:support@gmail.com">commercial@blooming-agriafrica.tn</a>
                     </p>
                   </div>
                 </div>

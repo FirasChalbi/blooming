@@ -12,7 +12,7 @@ function index(props) {
                 <div class="breadcrumb-bottom">
                     <div class="left pull-left">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html">Accueil</a></li>
                             <li><FontAwesomeIcon icon={faAngleRight} style={{ height: '14px' }}/></li>
                             <li class="active">{props.title}</li>
                         </ul>

@@ -4,7 +4,9 @@ import Header from '../../component/Header2';
 import Footer from '../../component/Footer';
 import TopTitle from "../../component/common/fields/TopTitle"
 import Index from "../../component/common/fields/Index"
-import { Box, VStack, Link, Image, Flex, Text, SimpleGrid, StackDivider, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Button } from '@chakra-ui/react';
+import { Box, VStack, Link, Image, Flex, Text, SimpleGrid, StackDivider, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Button, Icon } from '@chakra-ui/react';
+import { BiChevronDown , BiChevronUp} from 'react-icons/bi'; // Import BiChevronDown icon from react-icons
+
 import ProductCard from '../../component/ProductCard';
 import categories from '../../lib/categories'; // Import categories data
 import products from '../../lib/products'; // Import products data
@@ -12,6 +14,7 @@ import { useDisclosure } from '@chakra-ui/react'; // Import useDisclosure hook
 
 function Page() {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  console.log(selectedCategory)
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -27,31 +30,46 @@ function Page() {
       <Header />
       <TopTitle title="Product"/>
       <Index title="Product"/>
-      <Flex>
+      <Flex className='ml'>
         {/* Category Menu */}
-        <Box width="270px" height="min-content" bgColor="white" borderRadius={15} mx={20} my={20} position="sticky" top="100px" zIndex="10"
-          className="category-menu"
+        <Box width="290px" height="min-content" bgColor="white" borderRadius={15} mx={20} my={20} top="100px" zIndex="10"
+          className="category-menu stick"
         >
           <Box mx={20} mb={10}>
             <Box borderRadius={15} bgColor='#46C7C7' my={20} h={45} textAlign="center" display="flex" justifyContent="center" alignItems="center">
               <Text color="white">PRODUCT BY CATEGORIES</Text>
             </Box>
             <VStack
-              divider={<StackDivider borderColor='gray.200' />}
-              spacing={5}
-              align='stretch'
-              color="black"
-            >
-              {/* Map through menu items */}
-              {menuItems.map((item, index) => (
-                <Box key={index} onClick={() => setSelectedCategory(item.title)} style={{ cursor: 'pointer' }}>
-                  <Flex h='40px' bg='transparent'  justifyContent="left" alignItems="center" >
-                    <Image src={item.iconSrc} alt="icon items" w='35px' h='35px' mr={10}/>
-                    <span>{item.title}</span>
+      divider={<StackDivider borderColor='gray.200' />}
+      spacing={5}
+      align='stretch'
+      color="black"
+    >
+      {/* Map through menu items */}
+      {menuItems.map((category, index) => (
+        <Box key={index}>
+          <Flex h='40px' bg='transparent'  justifyContent="left" alignItems="center" onClick={() => setSelectedCategory(selectedCategory === category.title ? null : category.title)} style={{ cursor: 'pointer' }}>
+            <Image src={category.iconSrc} alt="icon items" w='35px' h='35px' mr={10}/>
+            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{category.title}</span>
+            {category.subcategories.length > 0 && (
+              <Icon as={selectedCategory === category.title ? BiChevronUp : BiChevronDown} color="gray.500" ml={2} />
+            )}
+          </Flex>
+          {/* Display subcategories if available */}
+          {selectedCategory === category.title && category.subcategories.length > 0 && (
+            <VStack ml={5} mt={2} align='stretch' color="black">
+              {category.subcategories.map((subcategory, subIndex) => (
+                <Box key={subIndex}>
+                  <Flex fontSize="15px" ml="5%" h='auto'  bg='transparent'  justifyContent="left" alignItems="center" onClick={() => setSelectedCategory(subcategory.title)} style={{ cursor: 'pointer' }}>
+                    <span>{subcategory.title}</span>
                   </Flex>
                 </Box>
               ))}
             </VStack>
+          )}
+        </Box>
+      ))}
+    </VStack>
           </Box>
         </Box>
 

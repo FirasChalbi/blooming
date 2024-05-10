@@ -4,16 +4,19 @@ import Header from '../../../../component/Header2';
 import Footer from '../../../../component/Footer';
 import TopTitle from '../../../../component/common/fields/TopTitle';
 import Index from '../../../../component/common/fields/Index';
-
-const thumbnailsData = [
-  { src: '/images/001.png' },
-  { src: '/images/002.png' },
-  { src: '/images/003.png' },
-  { src: '/images/004.png' },
-];
+import categories from '../../../../lib/categories2'; // Import categories data
+import products from '../../../../lib/products'; // Import products data
+// const thumbnailsData = [
+//   { src: '/images/001.png' },
+//   { src: '/images/002.png' },
+//   { src: '/images/003.png' },
+//   { src: '/images/004.png' },
+// ];
 
 function Page({ params }) {
-  const { name } = params;
+  const { name, category } = params; // Destructuring name and category from params
+  const decodedName = decodeURIComponent(name); // Decoding name
+  const decodedCategory = decodeURIComponent(category); // Decoding category
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleThumbnailClick = (index) => {
@@ -28,65 +31,71 @@ function Page({ params }) {
     setCurrentImageIndex((prevIndex) => (prevIndex === 3 ? 0 : prevIndex + 1));
   };
 
+  // Filter products based on decodedName and decodedCategory
+  const filteredProducts = products.filter(product => {
+    // Convert both decodedName and decodedCategory to lowercase for case-insensitive comparison
+    const lowerCaseName = decodedName.toLowerCase();
+    const lowerCaseCategory = decodedCategory.toLowerCase();
+
+    // Check if product name or category matches the provided decodedName and decodedCategory
+    return product.name.toLowerCase().includes(lowerCaseName) && product.category.toLowerCase() === lowerCaseCategory;
+  });
+  const thumbnailsData = filteredProducts.map(product => ({
+    src: product.img,
+  }));
+
   return (
     <div className="bg-gray-100">
       <Header />
-      <TopTitle title={name} />
+      <TopTitle title={decodedName} />
       <Index title="Product" />
 
       {/* Product */}
       <div className="container-produit">
-      <div className="product">
-        {/* Image Preview */}
-        <div className="product-left">
-          <div className="preview-current">
-            <img className="current-image" src={`/images/00${currentImageIndex + 1}.png`} alt="Product" />
-            <img className="previous-image" src="/images/icon-previous.svg" alt="Previous" onClick={handlePreviousImage} />
-            <img className="next-image" src="/images/icon-next.svg" alt="Next" onClick={handleNextImage} />
+        <div className="product">
+          {/* Image Preview */}
+          <div className="product-left">
+            <div className="preview-current">
+              <img className="current-image" src={`/images/00${currentImageIndex + 1}.png`} alt="Product" />
+              <img className="previous-image" src="/images/icon-previous.svg" alt="Previous" onClick={handlePreviousImage} />
+              <img className="next-image" src="/images/icon-next.svg" alt="Next" onClick={handleNextImage} />
+            </div>
+            <div className="preview-all">
+              {thumbnailsData.map((thumbnail, index) => (
+                <div key={index} className="thumbnail" onClick={() => handleThumbnailClick(index)}>
+                  <img src={thumbnail.src} alt={`Thumbnail ${index + 1}`} />
+                  <div className={`thumbnail-overlay ${index === currentImageIndex && 'thumbnail-selected'}`} />
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="preview-all">
-            {thumbnailsData.map((thumbnail, index) => (
-              <div key={index} className="thumbnail" onClick={() => handleThumbnailClick(index)}>
-                <img src={thumbnail.src} alt={`Thumbnail ${index + 1}`} />
-                <div className={`thumbnail-overlay ${index === currentImageIndex && 'thumbnail-selected'}`} />
+
+          {/* Product Details */}
+          <div className="product-right">
+            {/* Display filtered products */}
+            {filteredProducts.map(product => (
+              <div key={product.id}>
+                <p className="product-brand">{product.category}</p>
+                <p className="product-name">{product.name}</p>
+                <p className="product-description">{product.description}</p>
+                <div className="product-value">
+                  <div className="product-price">
+                    <p className="price-value">$125.00</p>
+                    <p className="price-discount">50%</p>
+                  </div>
+                  <p className="product-discount">$250.00</p>
+                </div>
+
+                <div className="product-cart">
+                  
+                  <div className="cart-add">
+                    <img src="/images/info.png" alt="Cart" className='h-8'/> Description
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Product Details */}
-        <div className="product-right">
-          <p className="product-brand">TRACTOR COMPANY</p>
-          <p className="product-name">Epandeur de fumier Modèle LP200 MAX</p>
-          <p className="product-description">
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
-            the weather can offer.
-          </p>
-          <div className="product-value">
-            <div className="product-price">
-              <p className="price-value">$125.00</p>
-              <p className="price-discount">50%</p>
-            </div>
-            <p className="product-discount">$250.00</p>
-          </div>
-
-          <div className="product-cart">
-            <div className="cart-quantity">
-              <div className="quantity-minus">
-                <img src="/images/icon-minus.svg" alt="Minus" />
-              </div>
-              <div className="quantity-value" color='black'>0</div>
-              <div className="quantity-plus">
-                <img src="/images/icon-plus.svg" alt="Plus" />
-              </div>
-            </div>
-            <div className="cart-add">
-              <img src="/images/icon-cart-light.svg" alt="Cart" /> Add to cart
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
 
       <Footer />
