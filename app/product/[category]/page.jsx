@@ -5,7 +5,7 @@ import Footer from '../../../component/Footer';
 import TopTitle from "../../../component/common/fields/TopTitle"
 import Index from "../../../component/common/fields/Index"
 
-import { Box, VStack, Link, Image, Flex, Text, SimpleGrid, StackDivider, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Button, Icon } from '@chakra-ui/react';
+import { Box, VStack, Grid, Link, Image, Flex, Text, SimpleGrid, StackDivider, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Button, Icon } from '@chakra-ui/react';
 import { BiChevronDown , BiChevronUp} from 'react-icons/bi'; // Import BiChevronDown icon from react-icons
 
 import ProductCard from '../../../component/ProductCard';
@@ -88,13 +88,18 @@ function Page({ params }) {
         {/* Products */}
         <Box flex="1" mr={10} >
           {/* Display filtered product cards in a responsive grid */}
-          <SimpleGrid columns={[2, null, 3]} spacing={{ base: '20px', md: '30px', lg: '40px' }} spacingX={30} spacingY={30} mx={20} my={20}>
+          <Grid
+            templateColumns={['repeat(auto-fill,minmax(170px,1fr))', null, 'repeat(auto-fill,minmax(280px,1fr))']}
+            gap={4} // Adjust the gap between grid items according to your preference
+            mx={[-15, null, 0]} // Adjust the negative margin for smaller screens
+            my={[-20, null, 0]} // Adjust the negative margin for smaller screens
+          >
             {filteredProducts.map((product) => (
               <Link key={product.id} href={`/product/${product.category}/${product.name}`} passHref>
                 <ProductCard product={product} />
               </Link>
             ))}
-          </SimpleGrid>
+          </Grid>
         </Box>
       </Flex>
       <Footer />
