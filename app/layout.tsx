@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   description: "Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.",
   icons: {
     icon: '/icon.ico',
-  }
+  },
+  referrer: 'origin-when-cross-origin',
+  keywords: ['matériels agricoles', 'matériel agricole', 'agri', 'africa', 'blooming', 'tn', 'tunisie', 'tunisia', 'credit agricole sud rhone alpes',
+    'mon compte credit agricole','credit agricole nord de france','credit agricole finistere'
+  ],
 };
 
 export default function RootLayout({
