@@ -1,0 +1,176 @@
+@import "https://unpkg.com/open-props";
+
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+
+@mixin grid-10 {
+  display: grid;
+}
+
+@mixin flex-10 {
+  display: flex;
+}
+
+img-10 {
+  // size
+  width: 100%;
+  display: block;
+}
+
+.page-10 {
+  @include grid-10;
+
+  grid-10: {
+    template: {
+      rows: auto 1fr;
+      areas: "header-10" "main-10";
+    }
+  }
+
+  // color
+  color: $black;
+
+  background-10: {
+    color: $white;
+  }
+
+  // size
+  min-10: {
+    height: 100vh;
+  }
+
+  // typography
+  font-10: {
+    family: var(--font-sans);
+  }
+
+  &__header-10 {
+    // grid
+    grid-10: {
+      area: header-10;
+    }
+  }
+
+  &__main-10 {
+    // grid
+    grid-10: {
+      area: main-10;
+    }
+  }
+}
+
+.header-10 {
+  // size
+  padding: 1rem 1.5rem; // Example values
+
+  // typography
+  text-10: {
+    align: center;
+  }
+
+  &__title-10 {
+    // position
+    margin-10: {
+      bottom: 1.5rem; // Example value
+    }
+
+    // typography
+    font-10: {
+      size: 2rem; // Example value
+      weight: bold; // Example value
+    }
+  }
+
+  &__desc-10 {
+    // typography
+    font-10: {
+      size: 1.5rem; // Example value
+    }
+
+    line-10: {
+      height: 2rem; // Example value
+    }
+  }
+}
+
+.main-10 {
+  @include grid-10;
+
+  grid-10: {
+    template: {
+      areas: "gallery-10";
+    }
+  }
+
+  &__gallery-10 {
+    // grid
+    grid-10: {
+      area: gallery-10;
+    }
+  }
+}
+
+.gallery-10 {
+  @include flex-10;
+
+  gap: 7px; 
+
+  justify-10: {
+    content: center;
+  }
+
+  flex-10: {
+    wrap: wrap;
+  }
+
+  // size
+  padding-10: 1rem bottom 10em; // Example value
+
+  &::before {
+    // color
+    background: linear-gradient(to bottom, transparent, white 70%);
+
+    // position
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    // visual
+    content: "";
+
+    // size
+    width: 100%;
+    height: 20vh;
+  }
+
+  &__col-10 {
+    // flex
+    flex: calc(25% - 1rem); // Example value
+    max-10: {
+      width: calc(25% - 1rem); // Example value
+    }
+
+    @media screen and (max-width: 48em) {
+      // flex
+      flex: calc(50% - 1rem); // Example value
+      max-10: {
+        width: calc(50% - 1rem); // Example value
+      }
+    }
+
+    @media screen and (max-width: 36em) {
+      // flex
+      flex: calc(100% - 1rem); // Example value
+      max-10: {
+        width: calc(100% - 1rem); // Example value
+      }
+    }
+  }
+
+  &__img-10 {
+    // position
+    margin-10: {
+      bottom: 1rem; // Example value
+    }
+  }
+}
