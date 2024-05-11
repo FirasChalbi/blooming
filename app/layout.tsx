@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Blooming Agri Africa",
   description: "Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.",
+  icons: {
+    icon: '/icon.ico',
+  }
 };
 
 export default function RootLayout({
