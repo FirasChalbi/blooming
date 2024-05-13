@@ -58,7 +58,7 @@ export default function Contact2() {
       <section className="w3l-contact-main pt-[10px]" id="contact">
         <div className="container ContactPageMap">
           <div className="map pt-lg-3">
-            <iframe className="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d528736.411358302!2d9.413343061630347!3d34.85161209659349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ef44783e1f73d1%3A0x3d62aae3b53d8199!2sTunisia!5e0!3m2!1sen!2sin!4v1570181661801!5m2!1sen!2sin" allowfullscreen=""></iframe>
+            <iframe className="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d528736.411358302!2d9.413343061630347!3d34.85161209659349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ef44783e1f73d1%3A0x3d62aae3b53d8199!2sTunisia!5e0!3m2!1sen!2sin!4v1570181661801!5m2!1sen!2sin" ></iframe>
           </div>
         </div>
       </section>
