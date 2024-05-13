@@ -44,7 +44,6 @@ function Footer() {
               </p>
 
               <div className="social-links">
-                <a href="#" className="twitter"><FaTwitter /></a>
                 <a href="#" className="facebook"><FaFacebook /></a>
                 <a href="#" className="instagram"><FaInstagram /></a>        
                 <a href="#" className="linkedin"><FaLinkedin /></a>

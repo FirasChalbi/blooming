@@ -16,7 +16,7 @@ function Footer2() {
                 <ul>
                   <li className="w3follow mt-sm-0 mt-4">Follows On : </li>
                   <li><a href="https://www.facebook.com/w3layouts/" className="facebook"><i className="fab fa-facebook-f"></i></a></li>
-                  <li><a href="https://twitter.com/W3layouts" className="twitter"><i className="fab fa-twitter"></i></a></li>
+                  
                   <li><a href="https://instagram.com/company/w3layouts" className="instagram"><i className="fab fa-instagram"></i></a></li>
                   <li><a href="https://linkedin.com/company/w3layouts" className="linkedin"><i className="fab fa-linkedin-in"></i></a></li>
                 </ul>
