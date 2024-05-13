@@ -42,13 +42,13 @@ d'une équipe complète.
 </div>
 
         <div className="imgWrapper">
-            <img src="/images/a1.jpg" alt=""/>
+            <img src="/images/olive3.jpg" alt=""/>
         </div>
         <div className="imgWrapper">
-            <img src="/images/service3.jpg" alt=""/>
+            <img src="/images/olive2.jpg" alt=""/>
         </div>
         <div className="imgWrapper">
-            <img src="/images/banner3.jpg" alt=""/>
+            <img src="/images/olive1.jpg" alt=""/>
         </div>
     </div>
   </div>

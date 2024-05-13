@@ -16,13 +16,13 @@ function FirstSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(activeSlide => (activeSlide + 1) % 3); // Change 5 to the number of slides you have
-    }, 5000); // Change 5000 to the desired interval in milliseconds
+    }, 4500); // Change 5000 to the desired interval in milliseconds
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 
   return (
     <section className="home">
-      <video className={`video-slide ${activeSlide === 0 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
+      <video className={`video-slide ${activeSlide === 0 ? 'active' : ''}`} src="/videos/back.mp4" autoPlay muted loop></video>
       {/* Add other video slides similarly */}
       <video className={`video-slide ${activeSlide === 1 ? 'active' : ''}`} src="/videos/3.mp4" autoPlay muted loop></video>
       <video className={`video-slide ${activeSlide === 2 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>

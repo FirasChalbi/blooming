@@ -21,7 +21,7 @@ function Page() {
           </p>
         </div>
         <div class="about-img">
-          <img src="https://i.postimg.cc/mgpwzmx9/about-photo.jpg" alt="food" />
+          <img src="/images/serviceolive.jpg" alt="food" />
         </div>
       </div>
     
