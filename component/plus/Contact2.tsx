@@ -36,12 +36,12 @@ export default function Contact2() {
                   <div className="form-top1">
                     <div className="form-top">
                       <div className="form-top-righ">
-                        <textarea className="w-full p-2 border rounded-md" name="w3lMessage" id="w3lMessage" placeholder="Message*" required="" {...register('message', { required: true })}></textarea>
+                      <textarea className="w-full p-2 border rounded-md" id="Message" placeholder="Message*" {...register('message', { required: true })}></textarea>
                       </div>
                       <div className="form-top-left">
-                        <input className="w-full p-2 mb-2 border rounded-md" type="text" name="w3lName" id="w3lName" placeholder="Nom" required="" {...register('name', { required: true })}/>
-                        <input className="w-full p-2 mb-2 border rounded-md" type="tel" name="w3lPhone" placeholder="Votre numéro de téléphone" required="" />
-                        <input className="w-full p-2 mb-2 border rounded-md" type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="" {...register('email', { required: true })}/>
+                        <input className="w-full p-2 mb-2 border rounded-md" type="text" id="w3lName" placeholder="Nom" {...register('name', { required: true })}/>
+                        <input className="w-full p-2 mb-2 border rounded-md" type="tel" name="w3lPhone" placeholder="Votre numéro de téléphone" />
+                        <input className="w-full p-2 mb-2 border rounded-md" type="email" id="w3lSender" placeholder="Email*" {...register('email', { required: true })}/>
                       </div>
                     </div>
                     <div className="text-center mt-5">
