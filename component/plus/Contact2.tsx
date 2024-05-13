@@ -1,10 +1,25 @@
+'use client'
 import React from 'react';
 import { BiPaperPlane } from "react-icons/bi";
 import { Flex } from '@chakra-ui/react';
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { useForm } from 'react-hook-form';
+import { sendEmail } from '@/utils/send-email';
+
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export default function Contact2() {
+  const { register, handleSubmit } = useForm<FormData>();
+
+  function onSubmit(data: FormData) {
+    sendEmail(data);
+  }
   return (
     <>
       <section className="w3l-contact-main pt-[50px]" id="contact">
@@ -17,16 +32,16 @@ export default function Contact2() {
             </div>
             <div className="top-map">
               <div className="map-content-9">
-                <form action="" method="post">
+                <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="form-top1">
                     <div className="form-top">
                       <div className="form-top-righ">
-                        <textarea className="w-full p-2 border rounded-md" name="w3lMessage" id="w3lMessage" placeholder="Message*" required=""></textarea>
+                        <textarea className="w-full p-2 border rounded-md" name="w3lMessage" id="w3lMessage" placeholder="Message*" required="" {...register('message', { required: true })}></textarea>
                       </div>
                       <div className="form-top-left">
-                        <input className="w-full p-2 mb-2 border rounded-md" type="text" name="w3lName" id="w3lName" placeholder="Nom" required="" />
+                        <input className="w-full p-2 mb-2 border rounded-md" type="text" name="w3lName" id="w3lName" placeholder="Nom" required="" {...register('name', { required: true })}/>
                         <input className="w-full p-2 mb-2 border rounded-md" type="tel" name="w3lPhone" placeholder="Votre numéro de téléphone" required="" />
-                        <input className="w-full p-2 mb-2 border rounded-md" type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="" />
+                        <input className="w-full p-2 mb-2 border rounded-md" type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="" {...register('email', { required: true })}/>
                       </div>
                     </div>
                     <div className="text-center mt-5">
