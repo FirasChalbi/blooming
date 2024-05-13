@@ -7,7 +7,8 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '@/utils/send-email';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export type FormData = {
   name: string;
   email: string;
@@ -16,12 +17,15 @@ export type FormData = {
 
 export default function Contact2() {
   const { register, handleSubmit } = useForm<FormData>();
-
+  
   function onSubmit(data: FormData) {
-    sendEmail(data);
+    sendEmail(data)
+    
   }
+  
   return (
     <>
+    <ToastContainer />
       <section className="w3l-contact-main pt-[50px]" id="contact">
         <div className="contact-infhny py-5">
           <div className="container py-md-5 ContactPageForm">

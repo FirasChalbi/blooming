@@ -19,6 +19,7 @@ import Whatsapp from "../component/common/Whatsapp"
 export default function Home() {
   return (
     <>
+    
     <Header2 />
     <FirstSection />
     <AboutForPage2 />

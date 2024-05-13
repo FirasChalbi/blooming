@@ -1,13 +1,17 @@
 import React from 'react';
 import Header from '../../component/Header2';
 import Footer from '../../component/Footer';
-import Contact from '../../component/plus/Contact2.tsx';
+import Contact from '../../component/plus/Contact2';
 import TopTitle from "../../component/common/fields/TopTitle"
 import Index from "../../component/common/fields/Index"
 import Whatsapp from "../../component/common/Whatsapp"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Page() {
   return (
+    <>
+    <ToastContainer />
     <div className="bg-gray-100">
       <Header />
       <TopTitle title="Contact"/>
@@ -16,6 +20,7 @@ function Page() {
       <Footer />
       <Whatsapp />
     </div>
+    </>
   );
 }
 
