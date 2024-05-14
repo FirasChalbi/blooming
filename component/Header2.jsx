@@ -179,7 +179,7 @@ function Header2() {
                   </li>
                   <li><a className="nav-link scrollto" href="/#assistance">ASSISTANCE TECHNIQUE</a></li>
 
-                  <li><Link className="nav-link scrollto" href="/#partenaires">PARTENAIRES</Link></li>
+                  <li><Link className="nav-link" href="/galery">GALERIE</Link></li>
                   <li><Link className="nav-link  " href="/service">SERVICES</Link></li>
                   
                   <li><a className="nav-link scrollto" href="/contact">CONTACT</a></li>
