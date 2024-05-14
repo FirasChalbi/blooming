@@ -3774,6 +3774,8 @@ flex-direction: row;
   width: 100%;
   height: auto;
   transition: all .7s ease-in-out;
+  min-height: 349px;
+    max-height: 350px;
 }
 
 .image-product-hover {

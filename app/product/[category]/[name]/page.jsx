@@ -4,8 +4,8 @@ import Header from '../../../../component/Header2';
 import Footer from '../../../../component/Footer';
 import TopTitle from '../../../../component/common/fields/TopTitle';
 import Index from '../../../../component/common/fields/Index';
-import categories from '../../../../lib/categories2'; // Import categories data
-import products from '../../../../lib/products'; // Import products data
+import categories from '../../../../lib/categories3'; // Import categories data
+import products from '../../../../lib/products2'; // Import products data
 // const thumbnailsData = [
 //   { src: '/images/001.png' },
 //   { src: '/images/002.png' },
@@ -43,7 +43,9 @@ function Page({ params }) {
   const thumbnailsData = filteredProducts.map(product => ({
     src: product.img,
   }));
-
+  console.log(thumbnailsData[0].src[0])
+  console.log(filteredProducts[0])
+  
   return (
     <div className="bg-gray-100">
       <Header />
@@ -56,7 +58,7 @@ function Page({ params }) {
           {/* Image Preview */}
           <div className="product-left">
             <div className="preview-current">
-              <img className="current-image" src={`/images/00${currentImageIndex + 1}.png`} alt="Product" />
+              <img className="current-image" src={thumbnailsData[0].src[currentImageIndex]} alt="Product" />
               <img className="previous-image" src="/images/icon-previous.svg" alt="Previous" onClick={handlePreviousImage} />
               <img className="next-image" src="/images/icon-next.svg" alt="Next" onClick={handleNextImage} />
             </div>
@@ -78,13 +80,13 @@ function Page({ params }) {
                 <p className="product-brand">{product.category}</p>
                 <p className="product-name">{product.name}</p>
                 <p className="product-description">{product.description}</p>
-                <div className="product-value">
+                {/* <div className="product-value">
                   <div className="product-price">
                     <p className="price-value">$125.00</p>
                     <p className="price-discount">50%</p>
                   </div>
                   <p className="product-discount">$250.00</p>
-                </div>
+                </div> */}
 
                 <div className="product-cart">
                   

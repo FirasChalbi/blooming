@@ -15,6 +15,7 @@ const ProductCard = ({ product }) => {
       borderWidth="1px"
       borderRadius="20"
       overflow="hidden"
+      
     >
       <div className="image-container">
         {/* Conditionally render the main image if product.img exists */}
