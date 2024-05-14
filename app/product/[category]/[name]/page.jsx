@@ -6,12 +6,6 @@ import TopTitle from '../../../../component/common/fields/TopTitle';
 import Index from '../../../../component/common/fields/Index';
 import categories from '../../../../lib/categories3'; // Import categories data
 import products from '../../../../lib/products2'; // Import products data
-// const thumbnailsData = [
-//   { src: '/images/001.png' },
-//   { src: '/images/002.png' },
-//   { src: '/images/003.png' },
-//   { src: '/images/004.png' },
-// ];
 
 function Page({ params }) {
   const { name, category } = params; // Destructuring name and category from params
@@ -49,7 +43,7 @@ function Page({ params }) {
   return (
     <div className="bg-gray-100">
       <Header />
-      <TopTitle title={decodedName} />
+      <TopTitle title="Product" />
       <Index title="Product" />
 
       {/* Product */}

@@ -14,8 +14,8 @@ const ProductCard = ({ product }) => {
       _hover={{ border: "2px solid #46C7C7" }}
       borderWidth="1px"
       borderRadius="20"
-      overflow="hidden"
-      
+      // overflow="hidden"
+      mb={10}
     >
       <div className="image-container">
         {/* Conditionally render the main image if product.img exists */}
@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
         )}
       </div>
       <Box p="6">
-        <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated color="black">
+        <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight"  color="black">
           {product.name}
         </Box>
         <Box display="flex" justifyContent="center" py={5}>

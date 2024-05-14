@@ -3804,7 +3804,7 @@ flex-direction: row;
   height: 50px;
   background: #f5f5f5;
   color: black;
-  font-size: 1rem;
+  font-size: 15px;
   font-weight: 700;
   border: none;
   border-radius: 10px;
@@ -3859,6 +3859,14 @@ flex-direction: row;
   }
   .stick{
     position: static;
+  }
+}
+
+@media screen and (max-width: 1021px) {
+  .product_space{
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
   }
 }
 

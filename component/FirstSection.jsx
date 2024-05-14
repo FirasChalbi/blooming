@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import Button from "../component/common/buttons/Button"
 import bvideo from '../public/videos/bvideo.mp4';
+import placeholderImage from '../public/images/placeholder.jpg'; // Import your placeholder image here
 
 
 function FirstSection() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState(false); // State to track video loading
 
   // Function to handle slide change
   const handleSlideChange = (index) => {
@@ -22,9 +24,13 @@ function FirstSection() {
 
   return (
     <section className="home">
+      {!videoLoaded && <img src={placeholderImage} alt="Placeholder" className="placeholder-image" />}
+
       <video className={`video-slide ${activeSlide === 0 ? 'active' : ''}`} src="/videos/back.mp4" autoPlay muted loop></video>
       {/* Add other video slides similarly */}
-      <video className={`video-slide ${activeSlide === 1 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop></video>
+      <video className={`video-slide ${activeSlide === 1 ? 'active' : ''}`} src="/videos/2.mp4" autoPlay muted loop
+        onLoadedData={() => setVideoLoaded(true)} // Set videoLoaded to true when video is loaded
+        style={{ display: videoLoaded ? 'block' : 'none' }}></video>
       <video className={`video-slide ${activeSlide === 2 ? 'active' : ''}`} src="/videos/back.mp4" autoPlay muted loop></video>
       {/* <video className={`video-slide ${activeSlide === 3 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video>
       <video className={`video-slide ${activeSlide === 4 ? 'active' : ''}`} src="/videos/bvideo.mp4" autoPlay muted loop></video> */}

@@ -81,13 +81,15 @@ function Page() {
         
 
         {/* Products */}
-        <Box flex="1" mr={10} >
+        <Box flex="1" mr={10} mt={15}>
           {/* Display filtered product cards in a responsive grid */}
           <Grid
-            templateColumns={['repeat(auto-fill,minmax(170px,1fr))', null, 'repeat(auto-fill,minmax(280px,1fr))']}
+            templateColumns={['repeat(auto-fill,minmax(170px,1fr))', null, 'repeat(auto-fill,minmax(300px,1fr))']}
             gap={4} // Adjust the gap between grid items according to your preference
             mx={[-15, null, 0]} // Adjust the negative margin for smaller screens
             my={[-20, null, 0]} // Adjust the negative margin for smaller screens
+            className='product_space'
+            fontSize="21px"
           >
             {filteredProducts.map((product) => (
               <Link key={product.id} href={`/product/${product.category}/${product.name}`} passHref>
