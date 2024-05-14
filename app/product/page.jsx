@@ -10,8 +10,8 @@ import { Grid } from '@chakra-ui/react';
 import { BiChevronDown , BiChevronUp} from 'react-icons/bi'; // Import BiChevronDown icon from react-icons
 
 import ProductCard from '../../component/ProductCard';
-import categories from '../../lib/categories'; // Import categories data
-import products from '../../lib/products'; // Import products data
+import categories from '../../lib/categories3'; // Import categories data
+import products from '../../lib/products2'; // Import products data
 import { useDisclosure } from '@chakra-ui/react'; // Import useDisclosure hook
 
 function Page() {

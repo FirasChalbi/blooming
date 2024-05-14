@@ -44,7 +44,7 @@ function Footer() {
               </p>
 
               <div className="social-links">
-                <a href="#" className="facebook"><FaFacebook /></a>
+                <a href="https://www.facebook.com/profile.php?id=61557158474316" className="facebook"><FaFacebook /></a>
                 <a href="#" className="instagram"><FaInstagram /></a>        
                 <a href="#" className="linkedin"><FaLinkedin /></a>
               </div>

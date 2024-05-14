@@ -24,7 +24,7 @@ function Cover() {
               <h3 className="title-w3l two pe-lg-5">
                 Arroser l'avenir de l'agriculture avec Blooming AgriAfrica
               </h3>
-              <a href="/produit" className="btn btn-style btn-outline-light mt-sm-5 mt-4">
+              <a href="/product" className="btn btn-style btn-outline-light mt-sm-5 mt-4">
                 Voir Plus
               </a>
             </div>
