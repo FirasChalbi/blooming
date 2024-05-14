@@ -34,13 +34,13 @@ function FirstSection() {
       <a href="/propos" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
       <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>
-      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
-      <h1>Pure Organic<br/><span>Products</span></h1>
+      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white", textTransform: "uppercase"}}>Bienvenue à</span> BLOOMING</h1>
+      <h1>Agriculture Durable<br/><span>Rentable</span></h1>
       <a href="/propos" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
       <div className={`content ${activeSlide === 1 ? 'active' : ''}`}>
-      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white"}}>WELCOME TO </span>BLOOMING</h1>
-      <h1>Pure Organic<br/><span>Products</span></h1>
+      <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white", textTransform: "uppercase"}}>Bienvenue à</span> BLOOMING</h1>
+      <h1>Agriculture Durable<br/><span>Rentable</span></h1>  
       <a href="/propos" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
       {/* <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>

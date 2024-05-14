@@ -36,7 +36,7 @@ img-10 {
 
   // size
   min-10: {
-    height: 100vh;
+    height: 100%;
   }
 
   // typography
@@ -56,6 +56,10 @@ img-10 {
     grid-10: {
       area: main-10;
     }
+
+    // flexbox fallback for browsers not supporting CSS Grid
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -113,64 +117,34 @@ img-10 {
 .gallery-10 {
   @include flex-10;
 
-  gap: 7px; 
-
-  justify-10: {
-    content: center;
-  }
-
-  flex-10: {
-    wrap: wrap;
-  }
+  gap: 7px;
 
   // size
-  padding-10: 1rem bottom 10em; // Example value
+  padding-10: 1rem 0; // Adjusted padding
 
   &::before {
-    // color
-    background: linear-gradient(to bottom, transparent, white 70%);
-
-    // position
-    position: fixed;
-    bottom: 0;
-    left: 0;
-
-    // visual
+    // Removed fixed positioning to prevent overlap on smaller screens
+    position: static;
     content: "";
-
-    // size
-    width: 100%;
     height: 20vh;
   }
 
   &__col-10 {
-    // flex
-    flex: calc(25% - 1rem); // Example value
-    max-10: {
-      width: calc(25% - 1rem); // Example value
-    }
+    flex: 1; // Make each column occupy equal space
 
-    @media screen and (max-width: 48em) {
-      // flex
-      flex: calc(50% - 1rem); // Example value
-      max-10: {
-        width: calc(50% - 1rem); // Example value
-      }
-    }
-
-    @media screen and (max-width: 36em) {
-      // flex
-      flex: calc(100% - 1rem); // Example value
-      max-10: {
-        width: calc(100% - 1rem); // Example value
-      }
+    @media screen and (min-width: 36em) {
+      flex-basis: 25%; // Adjusted flex-basis for larger screens
     }
   }
 
-  &__img-10 {
-    // position
-    margin-10: {
-      bottom: 1rem; // Example value
+  
+  
+  @media screen and (max-width: 768px) {
+    @include grid-10;
+    grid-10: {
+      template: {
+        columns: repeat(2, 1fr);
+      }
     }
   }
 }
