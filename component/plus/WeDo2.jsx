@@ -12,20 +12,20 @@ function WeDo2() {
           <div className="col-lg-4 col-md-6 mt-5">
             <div className="grids3-info">
               <a href="#url" className="d-block zoom">
-                <img src="https://wp.w3layouts.com/agrowfarm/wp-content/themes/agrowfarm/assets/images/a4.jpg" alt="" className="img-fluid radius-image"/>
+                <img src="/images/main.jpg" alt="" className="img-fluid radius-image"/>
               </a>
               <div className="grids-of-3-saas-info" >
                 <h5>
                   <a href="#url" className="title" style={{ backgroundColor:"white", color:"black",fontSize:"large"}}>Projets clé en main</a>
                 </h5>
-                <p className="saas-para text-black"> Venenatis eros et, sed commodo risus. Nullam sit amet laoreet elit.</p>
+                <p className="saas-para text-black">De l'idée à la réalité, nous gérons chaque étape pour vous fournir une solution prête à l'emploi.</p>
               </div>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 mt-5">
             <div className="grids3-info">
               <a href="#url" className="d-block zoom">
-                <img src="https://wp.w3layouts.com/agrowfarm/wp-content/themes/agrowfarm/assets/images/a5.jpg" alt="" className="img-fluid radius-image"/>
+                <img src="/images/olive10.jpg" alt="" className="img-fluid radius-image"/>
               </a>
               <div className="grids-of-3-saas-info">
                 <h5>
@@ -38,7 +38,7 @@ function WeDo2() {
           <div className="col-lg-4 col-md-6 mt-5">
             <div className="grids3-info">
               <a href="#url" className="d-block zoom">
-                <img src="https://wp.w3layouts.com/agrowfarm/wp-content/themes/agrowfarm/assets/images/a6.jpg" alt="" className="img-fluid radius-image"/>
+                <img src="/bloomimg/DSC_9369.jpg" alt="" className="img-fluid radius-image"/>
               </a>
               <div className="grids-of-3-saas-info">
                 <h5>

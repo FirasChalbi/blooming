@@ -6,7 +6,7 @@ function WhyUs() {
       <div className="container py-md-5 py-2 HomePageProgressCircles mt-16 mb-16">
         <div className="row3 w3l-circles">
           <div className="col-lg-6 circles-left">
-            <img src="https://wp.w3layouts.com/agrowfarm/wp-content/themes/agrowfarm/assets/images/a5.jpg" alt="" className="radius-image img-fluid"/>
+            <img src="/images/olive10.jpg" alt="" className="radius-image img-fluid"/>
           </div>
           <div className="col-lg-6 circles-right mt-lg-0 mt-5 align-self position-relative pad">
             <h6 className="title-subw3hny">Pourquoi Nous</h6>
