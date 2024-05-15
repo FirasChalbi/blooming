@@ -37,7 +37,7 @@ d'une équipe complète.
     <div className="row">
     <div className=" md:hidden">
   <div className="imgWrapper">
-    <img src="/images/a1.jpg" alt=""/>
+    <img src="/bloomimg/DSC_9303.jpg" alt=""/>
   </div>
 </div>
 
