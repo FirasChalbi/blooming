@@ -24,7 +24,6 @@ function FirstSection() {
 
   return (
     <section className="home">
-      {!videoLoaded && <img src={placeholderImage} alt="Placeholder" className="placeholder-image" />}
 
       <video className={`video-slide ${activeSlide === 0 ? 'active' : ''}`} src="/videos/back.mp4" autoPlay muted loop></video>
       {/* Add other video slides similarly */}
