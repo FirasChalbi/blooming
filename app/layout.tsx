@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import "./globals.css";
 import 'tailwindcss/tailwind.css';
@@ -57,18 +58,6 @@ export default function RootLayout({
           `
         }} />
         {/* End Google Tag Manager */}
-
-        {/* Google Tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RC93E8QS53"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-RC93E8QS53');
-          `
-        }} />
-        {/* End Google Tag (gtag.js) */}
       </Head>
       <body className={inter.className}>
         {/* Google Tag Manager (noscript) */}
@@ -77,8 +66,10 @@ export default function RootLayout({
             height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        
         {children}
       </body>
+      <GoogleAnalytics gaId="G-RC93E8QS53" />
     </html>
   );
 }
