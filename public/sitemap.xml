@@ -1,4 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap><loc>https://bloomingagriafrica.tn/sitemap-0.xml</loc></sitemap>
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    <url>
+        <loc>https://bloomingagriafrica.tn</loc>
+        <lastmod>2023-12-01T13:05:28.911Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bloomingagriafrica.tn"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://bloomingagriafrica.tn"/>
+    </url>
+    <url>
+        <loc>https://bloomingagriafrica.tn/propos</loc>
+        <lastmod>2023-12-01T13:05:28.912Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bloomingagriafrica.tn/propos"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://bloomingagriafrica.tn/propos"/>
+    </url>
+    <url>
+        <loc>https://bloomingagriafrica.tn/product</loc>
+        <lastmod>2023-12-01T13:05:28.912Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bloomingagriafrica.tn/product"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://bloomingagriafrica.tn/product"/>
+    </url>
+    <url>
+        <loc>https://bloomingagriafrica.tn/galery</loc>
+        <lastmod>2023-12-01T13:05:28.912Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bloomingagriafrica.tn/galery"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://bloomingagriafrica.tn/galery"/>
+    </url>
+    <url>
+        <loc>https://bloomingagriafrica.tn/service</loc>
+        <lastmod>2023-12-01T13:05:28.912Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bloomingagriafrica.tn/service"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://bloomingagriafrica.tn/service"/>
+    </url>
+    <url>
+        <loc>https://bloomingagriafrica.tn/contact</loc>
+        <lastmod>2023-12-01T13:05:28.912Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bloomingagriafrica.tn/contact"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://bloomingagriafrica.tn/contact"/>
+    </url>
+    <url>
+        <loc>https://bloomingagriafrica.tn/additional-page</loc>
+        <lastmod>2023-12-01T13:05:28.912Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bloomingagriafrica.tn/additional-page"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://bloomingagriafrica.tn/additional-page"/>
+    </url>
+</urlset>
