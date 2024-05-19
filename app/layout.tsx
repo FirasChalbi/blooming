@@ -15,9 +15,26 @@ export const metadata: Metadata = {
     icon: '/icon.ico',
   },
   referrer: 'origin-when-cross-origin',
-  keywords: ['matériels agricoles', 'matériel agricole', 'agri', 'africa', 'blooming', 'tn', 'tunisie', 'tunisia', 'credit agricole sud rhone alpes',
-    'mon compte credit agricole','credit agricole nord de france','credit agricole finistere'
+  keywords: [
+    'matériels agricoles', 'matériel agricole', 'agri', 'africa', 'blooming', 'tn', 'tunisie', 'tunisia', 
+    'credit agricole sud rhone alpes', 'mon compte credit agricole', 'credit agricole nord de france', 
+    'credit agricole finistere', 'agriculture', 'innovation agricole', 'projets agricoles', 
+    'technologies agricoles', 'équipement agricole', 'développement rural', 'soutien agricole', 'agrobusiness'
   ],
+  openGraph: {
+    title: "Blooming Agri Africa",
+    description: "Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.",
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://www.bloomingagriafrica.tn',
+    siteName: 'Blooming Agri Africa',
+    images: {
+      url: 'https://bloomingagriafrica.tn/_next/image?url=%2Fimages%2Flogob.png&w=96&q=75',
+      width: 1200,
+      height: 630,
+      alt: 'Blooming Agri Africa'
+    },
+}
 };
 
 export default function RootLayout({
