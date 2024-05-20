@@ -17,10 +17,27 @@ export const metadata: Metadata = {
   },
   referrer: 'origin-when-cross-origin',
   keywords: [
-    'matériels agricoles', 'matériel agricole', 'agri', 'africa', 'blooming', 'tn', 'tunisie', 'tunisia', 
-    'credit agricole sud rhone alpes', 'mon compte credit agricole', 'credit agricole nord de france', 
-    'credit agricole finistere', 'agriculture', 'innovation agricole', 'projets agricoles', 
-    'technologies agricoles', 'équipement agricole', 'développement rural', 'soutien agricole', 'agrobusiness'
+    // French Keywords
+    'matériels agricoles', 'matériel agricole', 'agri', 'afrique', 'blooming', 'tn', 'tunisie', 'tunisia', 
+    'crédit agricole sud rhône alpes', 'mon compte crédit agricole', 'crédit agricole nord de france', 
+    'crédit agricole finistère', 'agriculture', 'innovation agricole', 'projets agricoles', 
+    'technologies agricoles', 'équipement agricole', 'développement rural', 'soutien agricole', 'agrobusiness',
+    'agriculture durable', 'agriculture biologique', 'technologie agricole', 'ferme intelligente', 
+    'gestion des cultures', 'santé des sols', 'agriculture tunisienne','Blooming Agri', 'Blooming Africa',
+
+    // English Keywords
+    'agricultural materials', 'agricultural equipment', 'agriculture', 'africa', 'blooming', 'tn', 'tunisia', 
+    'credit agricole south rhone alps', 'my credit agricole account', 'credit agricole north of france', 
+    'credit agricole finistere', 'agriculture', 'agricultural innovation', 'agricultural projects', 
+    'agricultural technologies', 'agricultural equipment', 'rural development', 'agricultural support', 'agrobusiness',
+    'sustainable farming', 'organic farming', 'agricultural technology', 'smart farming', 
+    'crop management', 'soil health', 'Tunisian farming',
+
+    // Arabic Keywords
+    'معدات زراعية', 'معدات الفلاحة', 'الزراعة', 'افريقيا', 'ازدهار', 'تونس', 'البنك الزراعي', 'حسابي في البنك الزراعي', 
+    'الزراعة المستدامة', 'الزراعة العضوية', 'تكنولوجيا الزراعة', 'الزراعة الذكية', 'إدارة المحاصيل', 'صحة التربة', 
+    'مشاريع زراعية', 'تطوير ريفي', 'دعم زراعي', 'الأعمال الزراعية', 'التنمية الزراعية', 'حلول زراعية مبتكرة', 
+    'مشاريع زراعية في أفريقيا', 'الفلاحة التونسية', 'التقنيات الزراعية', 'البحث الزراعي', 'الشركات الزراعية الناشئة',
   ],
   openGraph: {
     title: "Blooming Agri Africa",
@@ -58,6 +75,17 @@ export default function RootLayout({
           `
         }} />
         {/* End Google Tag Manager */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Blooming Agri Africa",
+          "url": "https://www.bloomingagriafrica.tn",
+          "logo": "https://bloomingagriafrica.tn/_next/image?url=%2Fimages%2Flogob.png&w=96&q=75",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61557158474316",
+          ],
+          "description": "Blooming Agri Africa is a leading company in the agricultural sector, known for its integrated projects and innovative solutions."
+        })}} />
       </Head>
       <body className={inter.className}>
         {/* Google Tag Manager (noscript) */}
