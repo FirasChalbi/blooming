@@ -4,10 +4,10 @@ import './TopTitle.css'
 
 function TopTitle(props) {
   return (
-    <section class="breadcrumb-area">
+    <section className="breadcrumb-area">
         <div className='pos'> 
         
-	              <div class="breadcrumbs">
+	              <div className="breadcrumbs">
 	                  <h1>{props.title}</h1>
 	              </div>
                   </div>
