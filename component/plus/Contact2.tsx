@@ -90,7 +90,7 @@ export default function Contact2() {
                   <div className="text-box">
                     <h3 className="mb-2 text-black">Numéros</h3>
                     <p>
-                      <a href="tel:+12 403-11-22-69">+216 23 411 941</a>
+                      <a href="tel:+12 403-11-22-69">+216 58 417 803</a>
                     </p>
                     <p>
                       <a href="tel:+12 304-11-22-79">+216 52 962 066</a>

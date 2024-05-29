@@ -39,7 +39,7 @@ function Footer() {
                 Route de gabes km 1.5<br />
                 Sfax 3000,
                 Tunisie <br />
-                <strong>Phone:</strong> +216 23 411 941 <strong style={{color:"#46C7C7"}}>|</strong> +216 52 962 066<br />
+                <strong>Phone:</strong> +216 58 417 803<strong style={{color:"#46C7C7"}}>|</strong> +216 52 962 066<br />
                 <strong>Email:</strong> direction@blooming-agriafrica.tn<br />
               </p>
 
