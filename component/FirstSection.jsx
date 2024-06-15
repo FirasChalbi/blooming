@@ -1,7 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Button from "../component/common/buttons/Button"
-import bvideo from '../public/videos/bvideo.mp4';
 import placeholderImage from '../public/images/placeholder.jpg'; // Import your placeholder image here
 
 

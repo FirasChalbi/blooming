@@ -6,7 +6,7 @@ function Contact() {
       <div className="contact-in">
         <h1>Contact Info</h1>
         <h2><i className="fa fa-phone" aria-hidden="true"></i> Phone</h2>
-        <p>+216 23 411 941 <strong style={{color:"#46C7C7"}}>|</strong> +216 51 191 111<br /></p>
+        <p>+216 23 411 941 <strong style={{color:"#46C7C7"}}> |</strong> +216 51 191 111<strong style={{color:"#46C7C7"}}> |</strong> +216 51 191 11<br /></p>
         <h2><i className="fa fa-envelope" aria-hidden="true"></i> Email</h2>
         <p>direction@blooming-agriafrica.tn</p>
         <h2><i className="fa fa-map-marker" aria-hidden="true"></i> Address</h2>

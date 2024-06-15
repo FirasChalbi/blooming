@@ -95,6 +95,9 @@ export default function Contact2() {
                     <p>
                       <a href="tel:+12 304-11-22-79">+216 51 191 111</a>
                     </p>
+                    <p>
+                      <a href="tel:+12 304-11-22-79"> +216 23 411 941</a>
+                    </p>
                   </div>
                 </div>
               </div>
