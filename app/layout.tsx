@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from 'next/script';
@@ -64,6 +63,27 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <Head>
         <meta name="google-site-verification" content="hMJ3jQBkhXTDoKPzIDDdcvB1m8eyWR_CzQXngeuXkwY" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Blooming Agri Africa",
+          "url": "https://www.bloomingagriafrica.tn",
+          "logo": "https://bloomingagriafrica.tn/_next/image?url=%2Fimages%2Flogob.png&w=96&q=75",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61557158474316",
+          ],
+          "description": "Blooming Agri Africa is a leading company in the agricultural sector, known for its integrated projects and innovative solutions."
+        })}} />
+      </Head>
+      <body className={inter.className}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLRZMS9Z" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        
+        <ClientLayout>{children}</ClientLayout>
+
         {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
@@ -79,30 +99,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         />
         {/* End Google Tag Manager */}
-        <Script
-          id="google-tag-manager-noscript"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLRZMS9Z"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-            `,
-          }}
-        />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "http://schema.org",
-          "@type": "Organization",
-          "name": "Blooming Agri Africa",
-          "url": "https://www.bloomingagriafrica.tn",
-          "logo": "https://bloomingagriafrica.tn/_next/image?url=%2Fimages%2Flogob.png&w=96&q=75",
-          "sameAs": [
-            "https://www.facebook.com/profile.php?id=61557158474316",
-          ],
-          "description": "Blooming Agri Africa is a leading company in the agricultural sector, known for its integrated projects and innovative solutions."
-        })}} />
-      </Head>
-      <body className={inter.className}>
-        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
