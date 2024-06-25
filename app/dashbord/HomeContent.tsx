@@ -10,8 +10,17 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 
+type Product = {
+  _id: string;
+  name: string;
+  category: string;
+  description: string;
+  images: string[];
+};
+
+
 const HomeContent = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const router = useRouter();
 
   useEffect(() => {
