@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-console": "off", // Disables the no-console rule
+    "react/prop-types": "off", // Disables the prop-types rule for React components
+    "@next/next/no-img-element": "off" // Disables the Next.js no-img-element rule
+  }
 }
