@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/upload/route.js", "app/api/auth/[...nextauth]/route.js", "app/dashbord/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/upload/route.js", "app/api/auth/[...nextauth]/route.js", "app/dashbord/page.jsx", "lib/mongodb.js"],
   "exclude": ["node_modules"]
 }
