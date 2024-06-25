@@ -2,10 +2,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { uploadToCloudinary } from '../../../lib/uploadToCloudinary';
 
-export async function POST(req: NextRequest) {
+export async function POST(req) {
   try {
     const formData = await req.formData();
-    const file = formData.get("file") as File;
+    const file = formData.get("file");
 
     if (!file) {
       return NextResponse.json({ message: "No file provided" }, { status: 400 });
