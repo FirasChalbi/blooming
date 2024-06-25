@@ -22,14 +22,22 @@ import { ReactNotifications, Store } from "react-notifications-component";
 
 import "react-notifications-component/dist/theme.css";
 import "animate.css/animate.min.css";
-import 'animate.css/animate.compat.css';
+import "animate.css/animate.compat.css";
+
+interface Product {
+  _id: string;
+  name: string;
+  description: string;
+  category: string;
+  images: string[];
+}
 
 const ProductContent: React.FC = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [images, setImages] = useState<string[]>([]);
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const router = useRouter();
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,7 +113,7 @@ const ProductContent: React.FC = () => {
   const fetchProducts = async () => {
     try {
       const response = await fetch("/api/products");
-      const data = await response.json();
+      const data: Product[] = await response.json();
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -126,7 +134,7 @@ const ProductContent: React.FC = () => {
   return (
     <>
       <ReactNotifications />
-      <Box p={4} paddingLeft="1%" bg="#f8f9f8" ml={{base:"0%" , md:"17%"}}>
+      <Box p={4} paddingLeft="1%" bg="#f8f9f8" ml={{ base: "0%", md: "17%" }}>
         <Box
           border="1px"
           borderColor="gray.200"
@@ -215,7 +223,7 @@ const ProductContent: React.FC = () => {
           </form>
         </Box>
       </Box>
-      <Box p={4} bg="#f8f9f8" ml={{base:"0%" , md:"17%"}}>
+      <Box p={4} bg="#f8f9f8" ml={{ base: "0%", md: "17%" }}>
         <Box
           border="1px"
           borderColor="gray.200"
@@ -239,8 +247,8 @@ const ProductContent: React.FC = () => {
               </Tr>
             </Thead>
             <Tbody>
-              {products.map((product, index) => (
-                <Tr key={index}>
+              {products.map((product) => (
+                <Tr key={product._id}>
                   <Td>{product.name}</Td>
                   <Td>{product.description}</Td>
                   <Td>{product.category}</Td>
@@ -249,7 +257,7 @@ const ProductContent: React.FC = () => {
                       <img
                         key={imgIndex}
                         src={url}
-                        alt={`Product ${index} Image ${imgIndex}`}
+                        alt={`Product ${product.name} Image ${imgIndex}`}
                         style={{ width: "50px", height: "50px" }}
                       />
                     ))}
