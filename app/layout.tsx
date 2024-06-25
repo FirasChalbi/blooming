@@ -1,11 +1,12 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import { GoogleAnalytics } from '@next/third-parties/google'
-
 import "./globals.css";
 import 'tailwindcss/tailwind.css';
 import "../styles/global.css";
+import { ReactNode } from "react";
+import ClientLayout from "./client-layout"; // Import the client layout
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,25 +19,25 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
   keywords: [
     // French Keywords
-    'matériels agricoles', 'matériel agricole', 'agri', 'afrique', 'blooming', 'tn', 'tunisie', 'tunisia', 
-    'crédit agricole sud rhône alpes', 'mon compte crédit agricole', 'crédit agricole nord de france', 
-    'crédit agricole finistère', 'agriculture', 'innovation agricole', 'projets agricoles', 
+    'matériels agricoles', 'matériel agricole', 'agri', 'afrique', 'blooming', 'tn', 'tunisie', 'tunisia',
+    'crédit agricole sud rhône alpes', 'mon compte crédit agricole', 'crédit agricole nord de france',
+    'crédit agricole finistère', 'agriculture', 'innovation agricole', 'projets agricoles',
     'technologies agricoles', 'équipement agricole', 'développement rural', 'soutien agricole', 'agrobusiness',
-    'agriculture durable', 'agriculture biologique', 'technologie agricole', 'ferme intelligente', 
-    'gestion des cultures', 'santé des sols', 'agriculture tunisienne','Blooming Agri', 'Blooming Africa',
+    'agriculture durable', 'agriculture biologique', 'technologie agricole', 'ferme intelligente',
+    'gestion des cultures', 'santé des sols', 'agriculture tunisienne', 'Blooming Agri', 'Blooming Africa',
 
     // English Keywords
-    'agricultural materials', 'agricultural equipment', 'agriculture', 'africa', 'blooming', 'tn', 'tunisia', 
-    'credit agricole south rhone alps', 'my credit agricole account', 'credit agricole north of france', 
-    'credit agricole finistere', 'agriculture', 'agricultural innovation', 'agricultural projects', 
+    'agricultural materials', 'agricultural equipment', 'agriculture', 'africa', 'blooming', 'tn', 'tunisia',
+    'credit agricole south rhone alps', 'my credit agricole account', 'credit agricole north of france',
+    'credit agricole finistere', 'agriculture', 'agricultural innovation', 'agricultural projects',
     'agricultural technologies', 'agricultural equipment', 'rural development', 'agricultural support', 'agrobusiness',
-    'sustainable farming', 'organic farming', 'agricultural technology', 'smart farming', 
+    'sustainable farming', 'organic farming', 'agricultural technology', 'smart farming',
     'crop management', 'soil health', 'Tunisian farming',
 
     // Arabic Keywords
-    'معدات زراعية', 'معدات الفلاحة', 'الزراعة', 'افريقيا', 'ازدهار', 'تونس', 'البنك الزراعي', 'حسابي في البنك الزراعي', 
-    'الزراعة المستدامة', 'الزراعة العضوية', 'تكنولوجيا الزراعة', 'الزراعة الذكية', 'إدارة المحاصيل', 'صحة التربة', 
-    'مشاريع زراعية', 'تطوير ريفي', 'دعم زراعي', 'الأعمال الزراعية', 'التنمية الزراعية', 'حلول زراعية مبتكرة', 
+    'معدات زراعية', 'معدات الفلاحة', 'الزراعة', 'افريقيا', 'ازدهار', 'تونس', 'البنك الزراعي', 'حسابي في البنك الزراعي',
+    'الزراعة المستدامة', 'الزراعة العضوية', 'تكنولوجيا الزراعة', 'الزراعة الذكية', 'إدارة المحاصيل', 'صحة التربة',
+    'مشاريع زراعية', 'تطوير ريفي', 'دعم زراعي', 'الأعمال الزراعية', 'التنمية الزراعية', 'حلول زراعية مبتكرة',
     'مشاريع زراعية في أفريقيا', 'الفلاحة التونسية', 'التقنيات الزراعية', 'البحث الزراعي', 'الشركات الزراعية الناشئة',
   ],
   openGraph: {
@@ -46,20 +47,18 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://www.bloomingagriafrica.tn',
     siteName: 'Blooming Agri Africa',
-    images: {
-      url: 'https://bloomingagriafrica.tn/_next/image?url=%2Fimages%2Flogob.png&w=96&q=75',
-      width: 1200,
-      height: 630,
-      alt: 'Blooming Agri Africa'
-    },
-}
+    images: [
+      {
+        url: 'https://bloomingagriafrica.tn/_next/image?url=%2Fimages%2Flogob.png&w=96&q=75',
+        width: 1200,
+        height: 630,
+        alt: 'Blooming Agri Africa',
+      },
+    ],
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <Head>
@@ -88,16 +87,8 @@ export default function RootLayout({
         })}} />
       </Head>
       <body className={inter.className}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLRZMS9Z"
-            height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
-        
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
-      <GoogleAnalytics gaId="G-RC93E8QS53" />
     </html>
   );
 }
