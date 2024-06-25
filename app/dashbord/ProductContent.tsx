@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { uploadStagedFile } from "../../lib/uploadStagedFile";
+import Image from 'next/image';
 import { ReactNotifications, Store } from "react-notifications-component";
 
 import "react-notifications-component/dist/theme.css";
@@ -254,11 +255,12 @@ const ProductContent: React.FC = () => {
                   <Td>{product.category}</Td>
                   <Td>
                     {product.images.map((url, imgIndex) => (
-                      <img
+                      <Image
                         key={imgIndex}
                         src={url}
                         alt={`Product ${product.name} Image ${imgIndex}`}
-                        style={{ width: "50px", height: "50px" }}
+                        width={50}
+                        height={50}
                       />
                     ))}
                   </Td>

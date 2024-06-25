@@ -1,6 +1,7 @@
 "use client";
 
 import { SessionProvider } from "next-auth/react";
+import Script from 'next/script';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ReactNode } from "react";
 
@@ -8,7 +9,9 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
   return (
     <SessionProvider>
       {/* Google Tag Manager */}
-      <script
+      <Script
+        id="google-tag-manager"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -31,7 +34,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
       {/* End Google Tag Manager (noscript) */}
 
       {children}
-      
+
       <GoogleAnalytics gaId="G-RC93E8QS53" />
     </SessionProvider>
   );

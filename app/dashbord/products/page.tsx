@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import {
   Box,
   Button,
@@ -125,12 +125,10 @@ const ModifyProduct: React.FC = () => {
     }
   };
 
-
-
   return (
     <>
       <ReactNotifications />
-      <Box p={4} paddingLeft="1%" bg="#f8f9f8" ml={{base:"0%" , md:"17%"}}>
+      <Box p={4} paddingLeft="1%" bg="#f8f9f8" ml={{ base: "0%", md: "17%" }}>
         <Box
           border="1px"
           borderColor="gray.200"
@@ -223,4 +221,10 @@ const ModifyProduct: React.FC = () => {
   );
 };
 
-export default ModifyProduct;
+const ModifyProductPage = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <ModifyProduct />
+  </Suspense>
+);
+
+export default ModifyProductPage;
