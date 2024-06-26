@@ -34,12 +34,15 @@ const LoginPage: React.FC = () => {
       <Box
         p={6}
         bg="white"
-        boxShadow="md"
-        borderRadius="md"
+        boxShadow="15px"
+        borderRadius="15px"
+        height="200px"
         width={{ base: "90%", md: "400px" }}
+        
       >
-        <form onSubmit={handleSubmit}>
-          <VStack spacing={4} textColor="black">
+        <form onSubmit={handleSubmit} >
+          <VStack spacing={4} textColor="black" mx="10px"
+                my="10px">
             <FormControl>
               <FormLabel>Username</FormLabel>
               <Input
@@ -47,11 +50,15 @@ const LoginPage: React.FC = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter your username"
+                mx="10px"
+                my="10px"
               />
             </FormControl>
             <FormControl>
               <FormLabel>Password</FormLabel>
               <Input
+              mx="10px"
+                my="10px"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -59,7 +66,7 @@ const LoginPage: React.FC = () => {
               />
             </FormControl>
             {error && <Text color="red.500">{error}</Text>}
-            <Button type="submit" colorScheme="blue" width="full">
+            <Button type="submit" colorScheme="blue" width="full" mx="10px">
               Login
             </Button>
           </VStack>
