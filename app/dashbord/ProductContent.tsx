@@ -192,7 +192,7 @@ const ProductContent: React.FC = () => {
                 >
                   <option value="Matériels agricoles">Matériels agricoles</option>
                   <option value="Fertigation automatique">Fertigation automatique</option>
-                  <option value="Equipements hydrauliques et d'irrigation">Equipements hydrauliques et d'irrigation</option>
+                  <option value="Equipements hydrauliques et d'irrigation">Equipements hydrauliques et d&apos;irrigation</option>
                   <option value="Matériels de filtration">Matériels de filtration</option>
                   <option value="Matériels de protection des cultures">Matériels de protection des cultures</option>
                   <option value="Outils professionnels">Outils professionnels</option>
