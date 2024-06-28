@@ -9,6 +9,7 @@ import {
   FormLabel,
   Textarea,
   VStack,
+  Select,
   Table,
   Thead,
   Tbody,
@@ -39,6 +40,7 @@ const ProductContent: React.FC = () => {
   const [category, setCategory] = useState("");
   const [images, setImages] = useState<string[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [otherCategory, setOtherCategory] = useState("");
   const router = useRouter();
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,7 +69,7 @@ const ProductContent: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, description, category, images }),
+        body: JSON.stringify({ name, description, category: category === "Other" ? otherCategory : category, images }),
       });
       if (!response.ok) {
         throw new Error("Failed to create product");
@@ -92,6 +94,7 @@ const ProductContent: React.FC = () => {
       setName("");
       setDescription("");
       setCategory("");
+      setOtherCategory("");
       setImages([]);
     } catch (error) {
       console.error("Error creating product:", error);
@@ -180,14 +183,37 @@ const ProductContent: React.FC = () => {
                 <FormLabel fontWeight="medium" color="black">
                   Category
                 </FormLabel>
-                <Input
+                <Select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  placeholder="Product Category"
+                  placeholder="Select Category"
                   borderColor="gray.300"
                   focusBorderColor="blue.500"
-                />
+                >
+                  <option value="Matériels agricoles">Matériels agricoles</option>
+                  <option value="Fertigation automatique">Fertigation automatique</option>
+                  <option value="Equipements hydrauliques et d'irrigation">Equipements hydrauliques et d'irrigation</option>
+                  <option value="Matériels de filtration">Matériels de filtration</option>
+                  <option value="Matériels de protection des cultures">Matériels de protection des cultures</option>
+                  <option value="Outils professionnels">Outils professionnels</option>
+                  <option value="Engrais et produits de fertilisation">Engrais et produits de fertilisation</option>
+                  <option value="Other">Other</option>
+                </Select>
               </FormControl>
+              {category === "Other" && (
+                <FormControl>
+                  <FormLabel fontWeight="medium" color="black">
+                    Other Category
+                  </FormLabel>
+                  <Input
+                    value={otherCategory}
+                    onChange={(e) => setOtherCategory(e.target.value)}
+                    placeholder="Enter Category"
+                    borderColor="gray.300"
+                    focusBorderColor="blue.500"
+                  />
+                </FormControl>
+              )}
               <FormControl>
                 <FormLabel fontWeight="medium" color="black">
                   Images
