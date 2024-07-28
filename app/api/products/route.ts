@@ -3,10 +3,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectToDatabase from '../../../lib/mongodb';
 import { Product } from '../../../models/Products';
 
-export async function GET() {
+
+
+export async function GET(req: NextRequest) {
   try {
     await connectToDatabase();
-    const products = await Product.find({});
+
+    const { searchParams } = new URL(req.url);
+    const category = searchParams.get('category');
+    const filter = category ? { category } : {};
+
+    const products = await Product.find(filter);
     return NextResponse.json(products);
   } catch (error) {
     console.error('Error fetching products:', (error as Error).message);

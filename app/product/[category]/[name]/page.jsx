@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 import Header from '../../../../component/Header2';
 import Footer from '../../../../component/Footer';
 import TopTitle from '../../../../component/common/fields/TopTitle';
@@ -8,38 +8,40 @@ import categories from '../../../../lib/categories3'; // Import categories data
 import products from '../../../../lib/products2'; // Import products data
 
 function Page({ params }) {
-  const { name, category } = params; // Destructuring name and category from params
-  const decodedName = decodeURIComponent(name); // Decoding name
-  const decodedCategory = decodeURIComponent(category); // Decoding category
+  const { name, category } = params;
+  const decodedName = decodeURIComponent(name);
+  const decodedCategory = decodeURIComponent(category);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [product, setProduct] = useState(null);
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
   };
 
   const handlePreviousImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? 3 : prevIndex - 1));
+    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? product.images.length - 1 : prevIndex - 1));
   };
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === 3 ? 0 : prevIndex + 1));
+    setCurrentImageIndex((prevIndex) => (prevIndex === product.images.length - 1 ? 0 : prevIndex + 1));
   };
 
-  // Filter products based on decodedName and decodedCategory
-  const filteredProducts = products.filter(product => {
-    // Convert both decodedName and decodedCategory to lowercase for case-insensitive comparison
-    const lowerCaseName = decodedName.toLowerCase();
-    const lowerCaseCategory = decodedCategory.toLowerCase();
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const res = await fetch(`/api/products/${category}/${name}`);
+        if (!res.ok) throw new Error('Product not found');
+        const data = await res.json();
+        setProduct(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchProduct();
+  }, [category, name]);
 
-    // Check if product name or category matches the provided decodedName and decodedCategory
-    return product.name.toLowerCase().includes(lowerCaseName) && product.category.toLowerCase() === lowerCaseCategory;
-  });
-  const thumbnailsData = filteredProducts.map(product => ({
-    src: product.img,
-  }));
-  console.log(thumbnailsData[0].src[0])
-  console.log(filteredProducts[0])
-  
+  const thumbnailsData = product ? product.images : [];
+
   return (
     <div className="bg-gray-100">
       <Header />
@@ -52,15 +54,19 @@ function Page({ params }) {
           {/* Image Preview */}
           <div className="product-left">
             <div className="preview-current">
-              <img className="current-image" src={thumbnailsData[0].src[currentImageIndex]} alt="Product" />
-              <img className="previous-image" src="/images/icon-previous.svg" alt="Previous" onClick={handlePreviousImage} />
-              <img className="next-image" src="/images/icon-next.svg" alt="Next" onClick={handleNextImage} />
+              {product && (
+                <>
+                  <img className="current-image" src={thumbnailsData[currentImageIndex]} alt="Product" />
+                  <img className="previous-image" src="/images/icon-previous.svg" alt="Previous" onClick={handlePreviousImage} />
+                  <img className="next-image" src="/images/icon-next.svg" alt="Next" onClick={handleNextImage} />
+                </>
+              )}
             </div>
             <div className="preview-all">
-              {thumbnailsData.map((thumbnail, index) => (
+              {thumbnailsData.map((src, index) => (
                 <div key={index} className="thumbnail" onClick={() => handleThumbnailClick(index)}>
-                  <img src={thumbnail.src} alt={`Thumbnail ${index + 1}`} />
-                  <div className={`thumbnail-overlay ${index === currentImageIndex && 'thumbnail-selected'}`} />
+                  <img src={src} alt={`Thumbnail ${index + 1}`} />
+                  <div className={`thumbnail-overlay ${index === currentImageIndex ? 'thumbnail-selected' : ''}`} />
                 </div>
               ))}
             </div>
@@ -68,28 +74,18 @@ function Page({ params }) {
 
           {/* Product Details */}
           <div className="product-right">
-            {/* Display filtered products */}
-            {filteredProducts.map(product => (
+            {product && (
               <div key={product.id}>
                 <p className="product-brand">{product.category}</p>
                 <p className="product-name">{product.name}</p>
-                <p className="product-description">{product.description}</p>
-                {/* <div className="product-value">
-                  <div className="product-price">
-                    <p className="price-value">$125.00</p>
-                    <p className="price-discount">50%</p>
-                  </div>
-                  <p className="product-discount">$250.00</p>
-                </div> */}
-
+                <div className="product-description" dangerouslySetInnerHTML={{ __html: product.description.replace(/\n/g, '<br>') }} />
                 <div className="product-cart">
-                  
                   <div className="cart-add">
                     <img src="/images/info.png" alt="Cart" className='h-8'/> Description
                   </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>

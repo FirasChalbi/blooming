@@ -112,8 +112,8 @@ import Link from 'next/link';
                     </a>
                     <ul className={dropdownActive === 'dropdown1' ? 'dropdown-active' : ''}>
                       <li className="dropdown">
-                        <a href="/product" onClick={toggleDeepDropdown1}>
-                          <span>Matériels agricoles</span> 
+                        <a href="/product?category=Aqua 4d" onClick={toggleDeepDropdown1}>
+                          <span>Aqua 4d</span> 
                           {/* <FaChevronDown /> */}
                         </a>
                         {/* <ul className={deepDropdownActive1 ? 'dropdown-active' : ''}>
@@ -125,10 +125,10 @@ import Link from 'next/link';
                           <li><a href="#">Travail du sol</a></li>
                         </ul> */}
                       </li>
-                      <li><a href="/product">Fertigation automatique</a></li>
+                      <li><a href="/product?category=Metzer">Metzer</a></li>
                       <li className="dropdown">
-                        <a href="/product" onClick={toggleDeepDropdown2}>
-                          <span>Equipements hydrauliques et d'irrigation</span> 
+                        <a href="/product?category=Deutz fahr" onClick={toggleDeepDropdown2}>
+                          <span>Deutz fahr</span> 
                           {/* <FaChevronDown /> */}
                         </a>
                         {/* <ul className={deepDropdownActive2 ? 'dropdown-active' : ''}>
@@ -139,11 +139,11 @@ import Link from 'next/link';
                           <li><a href="#">Vannes</a></li>
                         </ul> */}
                       </li>
-                      <li><a href="/product">Matériels de filtration</a></li>
-                      <li><a href="/product">Matériels de protection des cultures</a></li>
+                      <li><a href="/product?category=Kiotti">Kiotti</a></li>
+                      <li><a href="/product?category=Kali k%2bs">Kali k+s</a></li>
                       <li className="dropdown">
-                        <a href="/product" onClick={toggleDeepDropdown3}>
-                          <span>Outils professionnels</span> 
+                        <a href="/product?category=Irritech filtration" onClick={toggleDeepDropdown3}>
+                          <span>Irritech filtration</span> 
                           {/* <FaChevronDown /> */}
                         </a>
                         {/* <ul className={deepDropdownActive3 ? 'dropdown-active' : ''}>
@@ -151,12 +151,12 @@ import Link from 'next/link';
                           <li><a href="#">Pneumatique</a></li>
                         </ul> */}
                       </li>
-                      <li className="dropdown">
+                      {/* <li className="dropdown">
                         <a href="/product" onClick={toggleDeepDropdown4}>
                           <span>Engrais et produits de fertilisation</span> 
-                          {/* <FaChevronDown /> */}
+                          <FaChevronDown />
                         </a>
-                        {/* <ul className={deepDropdownActive4 ? 'dropdown-active' : ''}>
+                        <ul className={deepDropdownActive4 ? 'dropdown-active' : ''}>
                           <li><a href="#">Activateurs phénologiques</a></li>
                           <li><a href="#">Activateurs pour fertirrigation</a></li>
                           <li><a href="#">Biostimulants</a></li>
@@ -171,8 +171,8 @@ import Link from 'next/link';
                           <li><a href="#">Microgranulés</a></li>
                           <li><a href="#">NPK granulés</a></li>
                           <li><a href="#">Technologies pour engrais de mélange</a></li>
-                        </ul> */}
-                      </li>
+                        </ul>
+                      </li> */}
                     </ul>
                   </li>
                   <li><a className="nav-link scrollto" href="#assistance" onClick={(e) => scrollToCenter('assistance', e)}>ASSISTANCE TECHNIQUE</a></li>

@@ -3,8 +3,8 @@ import { Box, Text } from '@chakra-ui/react';
 
 const ProductCard = ({ product }) => {
   // Check if product.img exists and it's an array with at least one element
-  const hasImages = product.img && Array.isArray(product.img) && product.img.length > 0;
-
+  const hasImages = product.images && Array.isArray(product.images) && product.images.length > 0;
+  console.log(hasImages)
   return (
     <Box
       className="product-card"
@@ -21,15 +21,22 @@ const ProductCard = ({ product }) => {
         {/* Conditionally render the main image if product.img exists */}
         {hasImages && (
           <img
-            src={product.img[0]} // Use the first image from the img array
+            src={product.images[0]} // Use the first image from the img array
             alt={product.name}
             className="product-image-photo"
           />
         )}
-        {/* Conditionally render the second image only if there are more than one image */}
-        {hasImages && product.img.length > 1 && (
+        {hasImages && product.images.length > 0 && (
           <img
-            src={product.img[1]} // Use the second image from the img array
+          src={product.images[0]} // Use the second image from the img array
+          alt={product.name}
+          className="image-product-hover"
+          />
+        )}
+        {/* Conditionally render the second image only if there are more than one image */}
+        {hasImages && product.images.length > 1 && (
+          <img
+            src={product.images[1]} // Use the second image from the img array
             alt={product.name}
             className="image-product-hover"
           />

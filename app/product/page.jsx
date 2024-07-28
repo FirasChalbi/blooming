@@ -1,12 +1,13 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../component/Header2';
 import Footer from '../../component/Footer';
 import TopTitle from "../../component/common/fields/TopTitle"
 import Index from "../../component/common/fields/Index"
 import { Box, VStack, Link, Image, Flex, Text, SimpleGrid, StackDivider, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Button, Icon } from '@chakra-ui/react';
 import { Grid } from '@chakra-ui/react';
-
+import axios from 'axios';
+import { useSearchParams } from 'next/navigation'
 import { BiChevronDown , BiChevronUp} from 'react-icons/bi'; // Import BiChevronDown icon from react-icons
 
 import ProductCard from '../../component/ProductCard';
@@ -15,17 +16,37 @@ import products from '../../lib/products2'; // Import products data
 import { useDisclosure } from '@chakra-ui/react'; // Import useDisclosure hook
 
 function Page() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  console.log(selectedCategory)
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const searchParams = useSearchParams()
+  const category = searchParams.get('category')
+  const [selectedCategory, setSelectedCategory] = useState(category);
+  const [products, setProducts] = useState([]); 
+  useEffect(() => {
+    if (category) {
+      const decodedCategory = decodeURIComponent(category);
+      setSelectedCategory(decodedCategory);
+    }
+  }, [category]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const searchParams = new URLSearchParams();
 
-  // Sample categories and products data
-  const menuItems = categories;
-
-  // Filter products based on the selected category
-  const filteredProducts = selectedCategory ? products.filter(product => product.category === selectedCategory) : products;
-
+        if (selectedCategory) {
+          if (selectedCategory !== "All Products") {
+            searchParams.append('category', selectedCategory);
+          }
+        }        
+        const res = await axios.get(`/api/products?${searchParams.toString()}`);
+        console.log(`/api/products?${searchParams.toString()}`)
+        console.log(res.data)
+        console.log(selectedCategory)
+        setProducts(res.data);
+      } catch (error) {
+        console.error('Error fetching products:', error.message);
+      }
+    };
+    fetchProducts();
+  }, [selectedCategory ,category]);
   return (
     <>
     <div className="bg-gray-100">
@@ -48,11 +69,11 @@ function Page() {
       color="black"
     >
       {/* Map through menu items */}
-      {menuItems.map((category, index) => (
-        <Box key={index}>
-          <Flex h='40px' bg='transparent'  justifyContent="left" alignItems="center" onClick={() => setSelectedCategory(selectedCategory === category.title ? null : category.title)} style={{ cursor: 'pointer' }}>
-            <Image src={category.iconSrc} alt="icon items" w='35px' h='35px' mr={10}/>
-            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{category.title}</span>
+      {categories.map((category, index) => (
+        <Box key={index} backgroundColor={selectedCategory === category.title ? '#46C7C7' : 'transparent'}  borderRadius="13px">
+          <Flex h='40px' bg='transparent'  justifyContent="left" alignItems="center" onClick={() => setSelectedCategory(selectedCategory === category.title ? null : category.title)}  style={{ cursor: 'pointer' }} >
+            <Image src={category.iconSrc} alt="icon items" w='35px' h='35px' mr={10} ml={2} mx={2}/>
+            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: selectedCategory === category.title ? 'white' : 'black' }}>{category.title}</span>
             {category.subcategories.length > 0 && (
               <Icon as={selectedCategory === category.title ? BiChevronUp : BiChevronDown} color="gray.500" ml={2} />
             )}
@@ -82,22 +103,20 @@ function Page() {
 
         {/* Products */}
         <Box flex="1" mr={10} mt={15}>
-          {/* Display filtered product cards in a responsive grid */}
-          <Grid
-            templateColumns={['repeat(auto-fill,minmax(170px,1fr))', null, 'repeat(auto-fill,minmax(300px,1fr))']}
-            gap={4} // Adjust the gap between grid items according to your preference
-            mx={[-15, null, 0]} // Adjust the negative margin for smaller screens
-            my={[-20, null, 0]} // Adjust the negative margin for smaller screens
-            className='product_space'
-            fontSize="21px"
-          >
-            {filteredProducts.map((product) => (
-              <Link key={product.id} href={`/product/${product.category}/${product.name}`} passHref>
-                <ProductCard product={product} />
-              </Link>
-            ))}
-          </Grid>
-        </Box>
+            {products.length > 0 ? (
+              <Grid templateColumns={['repeat(auto-fill,minmax(170px,1fr))', null, 'repeat(auto-fill,minmax(300px,1fr))']} gap={4} mx={[-15, null, 0]} my={[-20, null, 0]} className='product_space' fontSize="21px">
+                {products.map((product) => (
+                  <Link key={product.id} href={`/product/${product.category}/${product.name}`} passHref>
+                    <ProductCard product={product} />
+                  </Link>
+                ))}
+              </Grid>
+            ) : (
+              <Box textAlign="center" mt={10}>
+                <Text fontSize="xl" color="gray.500">Aucun produit disponible dans cette catégorie.</Text>
+              </Box>
+            )}
+          </Box>
       </Flex>
       <Footer />
     </div>
