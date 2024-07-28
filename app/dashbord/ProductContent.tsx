@@ -190,13 +190,12 @@ const ProductContent: React.FC = () => {
                   borderColor="gray.300"
                   focusBorderColor="blue.500"
                 >
-                  <option value="Matériels agricoles">Matériels agricoles</option>
-                  <option value="Fertigation automatique">Fertigation automatique</option>
-                  <option value="Equipements hydrauliques et d'irrigation">Equipements hydrauliques et d&apos;irrigation</option>
-                  <option value="Matériels de filtration">Matériels de filtration</option>
-                  <option value="Matériels de protection des cultures">Matériels de protection des cultures</option>
-                  <option value="Outils professionnels">Outils professionnels</option>
-                  <option value="Engrais et produits de fertilisation">Engrais et produits de fertilisation</option>
+                  <option value="Aqua 4d">Aqua 4d</option>
+                  <option value="Metzer">Metzer</option>
+                  <option value="Deutz fahr">Deutz fahr</option>
+                  <option value="Kiotti">Kiotti</option>
+                  <option value="Kali k+s">Kali k+s</option>
+                  <option value="Irritech filtration">Irritech filtration</option>
                   <option value="Other">Other</option>
                 </Select>
               </FormControl>
