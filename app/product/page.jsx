@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Header from '../../component/Header2';
 import Footer from '../../component/Footer';
 import TopTitle from "../../component/common/fields/TopTitle"
@@ -15,7 +15,7 @@ import categories from '../../lib/categories3'; // Import categories data
 import products from '../../lib/products2'; // Import products data
 import { useDisclosure } from '@chakra-ui/react'; // Import useDisclosure hook
 
-function Page() {
+function PageContent() {
   const searchParams = useSearchParams()
   const category = searchParams.get('category')
   const [selectedCategory, setSelectedCategory] = useState(category);
@@ -139,5 +139,11 @@ function Page() {
     </>
   );
 }
-
+function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PageContent />
+    </Suspense>
+  );
+}
 export default Page;
