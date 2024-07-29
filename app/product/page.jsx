@@ -58,7 +58,7 @@ function PageContent() {
         <Box width="290px" height="min-content" bgColor="white" borderRadius={15} mx={20} my={20} top="100px" zIndex="10"
           className="category-menu stick"
         >
-          <Box mx={20} mb={10}>
+          <Box mx={20} mb={10} w="90%">
             <Box borderRadius={15} bgColor='#46C7C7' my={20} h={45} textAlign="center" display="flex" justifyContent="center" alignItems="center">
               <Text color="white">PRODUCT BY CATEGORIES</Text>
             </Box>
@@ -112,7 +112,7 @@ function PageContent() {
                 ))}
               </Grid>
             ) : (
-              <Box textAlign="center" mt={10}>
+              <Box textAlign="center" mt={10} mb={20}>
                 <Text fontSize="xl" color="gray.500">Aucun produit disponible dans cette catégorie.</Text>
               </Box>
             )}
