@@ -46,7 +46,7 @@ class ImageGrid extends React.Component {
         { src: "/bloomimg/DSC_9362.jpg", alt: "DSC_9362.jpg" },
         { src: "/bloomimg/DSC_9368.jpg", alt: "DSC_9368.jpg" },
         { src: "/bloomimg/DSC_9369.jpg", alt: "DSC_9369.jpg" },
-        { src: "/bloomimg/DSC_9377.jpg", alt: "DSC_9377.jpg" },
+        { src: "/bloomimg/DJI_0740.jpg", alt: "DJI_0740.jpg" },
         { src: "/bloomimg/DSC_9379.jpg", alt: "DSC_9379.jpg" },
       ],
     ];
