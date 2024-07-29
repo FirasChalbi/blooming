@@ -141,7 +141,7 @@ function PageContent() {
 }
 function Page() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<></>}>
       <PageContent />
     </Suspense>
   );
