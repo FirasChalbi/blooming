@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useDropzone } from "react-dropzone";
 import {
   Box,
   Button,
@@ -20,6 +21,7 @@ import {
 import { useRouter } from "next/navigation";
 import { uploadStagedFile } from "../../lib/uploadStagedFile";
 import Image from 'next/image';
+import { IoClose } from "react-icons/io5";
 import { ReactNotifications, Store } from "react-notifications-component";
 
 import "react-notifications-component/dist/theme.css";
@@ -43,21 +45,22 @@ const ProductContent: React.FC = () => {
   const [otherCategory, setOtherCategory] = useState("");
   const router = useRouter();
 
-  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      const files = Array.from(event.target.files);
-      const uploadedImages = await Promise.all(
-        files.map((file) => uploadStagedFile(file))
-      );
+  const onDrop = async (acceptedFiles: File[]) => {
+    const uploadedImages = await Promise.all(
+      acceptedFiles.map((file) => uploadStagedFile(file))
+    );
 
-      const successfulUploads = uploadedImages.filter(
-        (url): url is string => !!url
-      );
+    const successfulUploads = uploadedImages.filter(
+      (url): url is string => !!url
+    );
 
-      setImages((prevImages) => [...prevImages, ...successfulUploads]);
+    setImages((prevImages) => [...prevImages, ...successfulUploads]);
+  };
 
-      event.target.value = "";
-    }
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+  const handleDeleteImage = (urlToDelete: string) => {
+    setImages((prevImages) => prevImages.filter((url) => url !== urlToDelete));
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -217,30 +220,58 @@ const ProductContent: React.FC = () => {
                 <FormLabel fontWeight="medium" color="black">
                   Images
                 </FormLabel>
-                <Input
-                  type="file"
-                  accept="image/*"
-                  multiple
-                  onChange={handleFileChange}
-                />
-                <VStack spacing={2} mt={4}>
-                  {images.map((url, index) => (
-                    <Box
-                      key={index}
-                      border="1px"
-                      borderColor="gray.200"
-                      borderRadius="md"
-                      p={2}
-                      width="100%"
-                    >
-                      <img
-                        src={url}
-                        alt={`Uploaded ${index}`}
-                        style={{ width: "100px", height: "100px" }}
-                      />
-                    </Box>
-                  ))}
-                </VStack>
+                <div
+                  {...getRootProps()}
+                  style={{
+                    position: "relative",
+                    padding: "16px",
+                    border: "2px dashed #ccc",
+                    borderRadius: "8px",
+                    textAlign: "center",
+                    cursor: "pointer",
+                    backgroundColor: "#f9f9f9",
+                  }}
+                >
+                  <input {...getInputProps()} />
+                  {isDragActive ? (
+                    <p>Drop the files here...</p>
+                  ) : images.length > 0 ? (
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                      {images.map((url, index) => (
+                        <div key={index} style={{ position: "relative" }}>
+                          <img
+                            src={url}
+                            alt={`Uploaded ${index}`}
+                            style={{
+                              width: "100px",
+                              height: "100px",
+                              objectFit: "cover",
+                              borderRadius: "4px",
+                            }}
+                          />
+                          <button
+                            style={{
+                              position: "absolute",
+                              top: "8px",
+                              right: "8px",
+                              background: "transparent",
+                              border: "none",
+                              cursor: "pointer",
+                              padding: "4px",
+                              borderRadius: "50%",
+                              backgroundColor: "#fff",
+                            }}
+                            onClick={() => handleDeleteImage(url)}
+                          >
+                            <IoClose size={20} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>Drag & drop an image. Recommended size 300 x 300</p>
+                  )}
+                </div>
               </FormControl>
               <Button type="submit" colorScheme="blue" width="full">
                 Submit

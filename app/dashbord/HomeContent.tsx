@@ -123,14 +123,13 @@ const HomeContent = () => {
             <Flex>
               <Button
                 mr={2}
-                onClick={() => router.push(`#`)}
+                onClick={() => router.push(`product/${product.category}/${product.name}`)}
               >
                 See
               </Button>
               <Button
               mr={2}
-              // onClick={() => router.push(`/dashbord/products?id=${product._id}`)}
-              onClick={() => router.push(`#`)}
+              onClick={() => router.push(`/dashbord/products/${product._id}`)}
             >
               Modify
             </Button>
