@@ -4,8 +4,7 @@ import Header from '../../../../component/Header2';
 import Footer from '../../../../component/Footer';
 import TopTitle from '../../../../component/common/fields/TopTitle';
 import Index from '../../../../component/common/fields/Index';
-import categories from '../../../../lib/categories3'; // Import categories data
-import products from '../../../../lib/products2'; // Import products data
+
 
 function Page({ params }) {
   const { name, category } = params;
@@ -44,7 +43,6 @@ function Page({ params }) {
 
   return (
     <div className="bg-gray-100">
-      <Header />
       <TopTitle title="Product" />
       <Index title="Product" />
 
@@ -89,8 +87,6 @@ function Page({ params }) {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
