@@ -10,7 +10,6 @@ const uploadStagedFile = async (stagedFile: File | Blob) => {
       });
   
       const data = await res.json();
-      console.log(data.imgUrl);
       return data.imgUrl;
     } catch (error) {
       console.error("Error uploading file:", error);

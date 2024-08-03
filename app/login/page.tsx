@@ -20,8 +20,6 @@ const LoginPage: React.FC = () => {
       password,
     });
 
-    console.log('Sign-in response:', res);
-
     if (res?.error) {
       setError(res.error);
     } else {

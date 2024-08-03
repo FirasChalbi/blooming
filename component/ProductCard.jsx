@@ -4,7 +4,6 @@ import { Box, Text } from '@chakra-ui/react';
 const ProductCard = ({ product }) => {
   // Check if product.img exists and it's an array with at least one element
   const hasImages = product.images && Array.isArray(product.images) && product.images.length > 0;
-  console.log(hasImages)
   return (
     <Box
       className="product-card"

@@ -67,7 +67,7 @@ Notre équipe d'experts qualifiés se tient à disposition pour offrir conseils 
                 </div>
               </div>
             </div> */}
-            <a href="/contact" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white"}}>DEMANDEZ L'ASSISTANCE</a>
+            <a href="/contact" className="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white"}}>DEMANDEZ L'ASSISTANCE</a>
           </div>
         </div>
       </div>

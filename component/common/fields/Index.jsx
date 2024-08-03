@@ -5,16 +5,16 @@ import './index.css'
 
 function index(props) {
   return (
-    <section class="breadcrumb-bottom-area">
-    <div class="container5">
-        <div class="row5">
-            <div class="col5">
-                <div class="breadcrumb-bottom">
-                    <div class="left pull-left">
+    <section className="breadcrumb-bottom-area">
+    <div className="container5">
+        <div className="row5">
+            <div className="col5">
+                <div className="breadcrumb-bottom">
+                    <div className="left pull-left">
                         <ul>
                             <li><a href="index.html">Accueil</a></li>
                             <li><FontAwesomeIcon icon={faAngleRight} style={{ height: '14px' }}/></li>
-                            <li class="active">{props.title}</li>
+                            <li className="active">{props.title}</li>
                         </ul>
                     </div>  
                 </div>

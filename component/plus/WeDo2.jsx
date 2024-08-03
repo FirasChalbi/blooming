@@ -51,8 +51,8 @@ function WeDo2() {
         </div>
       </div>
       <a href="/service" >
-      <p class="banner__link-wrapper text-center">
-                  <span class="banner__link">
+      <p className="banner__link-wrapper text-center">
+                  <span className="banner__link">
                     <i>Voir Plus</i>
                   </span>
                 </p>

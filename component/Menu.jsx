@@ -99,7 +99,6 @@ function Menu() {
         setScrolled(false);
       }
     };
-    console.log(scrolled)
 
     window.addEventListener('scroll', handleScroll);
 

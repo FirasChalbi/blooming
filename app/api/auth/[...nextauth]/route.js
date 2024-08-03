@@ -10,7 +10,7 @@ const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        console.log('Credentials received:', credentials);
+        console.log('Credentials received');
 
         const user = { id: 1, name: process.env.ADMIN_USERNAME, 
           password: process.env.ADMIN_PASSWORD  };

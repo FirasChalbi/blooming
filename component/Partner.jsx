@@ -3,14 +3,14 @@ import "./partner.scss"
 function Partner() {
   return (
 
-<div class='container11' style={{paddingTop: "50px"}} id="partenaires">
+<div className='container11' style={{paddingTop: "50px"}} id="partenaires">
   
-  <section class='partners'>
-  <div class="heading" >
+  <section className='partners'>
+  <div className="heading" >
               Nos Partenaires
             </div>
-    <div class='partners-img-container' style={{paddingBottom: "40px"}}>
-      <div class='partners-img'></div>
+    <div className='partners-img-container' style={{paddingBottom: "40px"}}>
+      <div className='partners-img'></div>
     </div>
   </section>
   

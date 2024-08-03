@@ -65,7 +65,6 @@ const ProductContent: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("Submitting form with images:", images);
     try {
       const response = await fetch("/api/products", {
         method: "POST",

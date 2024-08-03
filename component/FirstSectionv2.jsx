@@ -36,29 +36,29 @@ function FirstSection() {
       <div className={`content ${activeSlide === 0 ? 'active' : ''}`}>
       <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white", textTransform: "uppercase"}}>Bienvenue à</span> BLOOMING</h1>
       <h1>Agriculture Durable<br/><span>Rentable</span></h1>
-      <a href="/propos" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
+      <a href="/propos" className="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
       <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>
       <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white", textTransform: "uppercase"}}>Bienvenue à</span> BLOOMING</h1>
       <h1>Agriculture Durable<br/><span>Rentable</span></h1>
-      <a href="/propos" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
+      <a href="/propos" className="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
       <div className={`content ${activeSlide === 1 ? 'active' : ''}`}>
       <h1 style={{fontSize:"13px", letterSpacing:"3px", color:"#46C7C7"}}><span style={{fontSize:"13px", letterSpacing:"3px", color:"white", textTransform: "uppercase"}}>Bienvenue à</span> BLOOMING</h1>
       <h1>Agriculture Durable<br/><span>Rentable</span></h1>  
-      <a href="/propos" class="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
+      <a href="/propos" className="btn btn-style btn-outline-light mt-9" style={{backgroundColor:"#46C7C7", color:"white", borderColor:"#46C7C7"}}>Voir Plus</a>
       </div>
       {/* <div className={`content ${activeSlide === 2 ? 'active' : ''}`}>
-      <div class="container22 HomePageHeroHeader">
-        <div class="main-content">
-          <div class="w3lbanner-left">
+      <div className="container22 HomePageHeroHeader">
+        <div className="main-content">
+          <div className="w3lbanner-left">
             <h6>
               Welcome to Agrowfarm            </h6>
             <h4>
               Pure Organic Products            </h4>
-            <a href="about" class="btn btn-style btn-secondary mt-md-5 mt-4">Read More</a>
+            <a href="about" className="btn btn-style btn-secondary mt-md-5 mt-4">Read More</a>
           </div>
-          <div class="w3lbanner-right">
+          <div className="w3lbanner-right">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sapiente commodi maiores ullam.            </p>
           </div>

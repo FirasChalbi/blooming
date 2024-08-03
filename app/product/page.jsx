@@ -37,9 +37,6 @@ function PageContent() {
           }
         }        
         const res = await axios.get(`/api/products?${searchParams.toString()}`);
-        console.log(`/api/products?${searchParams.toString()}`)
-        console.log(res.data)
-        console.log(selectedCategory)
         setProducts(res.data);
       } catch (error) {
         console.error('Error fetching products:', error.message);
