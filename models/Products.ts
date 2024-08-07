@@ -1,4 +1,3 @@
-// models/Product.ts
 import mongoose from 'mongoose';
 
 const productSchema = new mongoose.Schema({
@@ -17,7 +16,9 @@ const productSchema = new mongoose.Schema({
   },
   images: {
     type: [String], // Array of image URLs
-    
+  },
+  pdfs: {
+    type: [String], // Array of PDF URLs
   },
 }, {
   timestamps: true,

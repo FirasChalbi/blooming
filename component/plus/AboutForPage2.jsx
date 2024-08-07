@@ -11,12 +11,13 @@ function AboutForPage() {
     <div className="content md:mt-[-55px]">
       <h4 style={{textTransform:"uppercase"}}>PRéSENTATION</h4>
       <h2>Qui sommes nous?</h2>
-      <p className='d pr-7'>Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.<br/>
-      Qui font référence à un système d’implémentation qui vise à unifier les intérêts, les objectifs et les pratiques, même au sein de projets
-individuels, grâce à un processus basé sur le travail
-d'une équipe complète.
+      <p className='d pr-7' style={{textAlign: "justify", marginBottom:"20px"}}>Nous offrons une vaste sélection de machines professionnelles, incluant leurs pièces de rechange d’origine. Parmi nos fournisseurs, DEUTZ FAHR se distingue comme un géant mondial dans la fabrication de tracteurs de grandes puissances et de moissonneuses-batteuses. DAEDONG-KIOTI est également un partenaire clé, spécialisé dans les petits tracteurs, offrant ainsi une gamme complète adaptée à divers besoins agricoles.<br/>
+
+En ce qui concerne les engrais chimiques hydrosolubles et solides, nous détenons le monopole du marché avec des produits provenant de K+S Minerals and Agriculture GmbH, une entreprise allemande renommée pour la qualité de ses engrais. Nous représentons également YARA, une multinationale norvégienne réputée pour ses solutions innovantes en matière de nutrition des cultures, ainsi que Futureco Bioscience, spécialisée dans les biostimulants et compléments minéraux, apportant une valeur ajoutée notable à notre offre.<br/>
+
+Par ailleurs, nous proposons des solutions de filtration et d’irrigation avec des marques reconnues telles qu’Aqua 4D, Metzer et Irritec. Ces partenariats nous permettent de fournir à nos clients des solutions complètes et fiables pour optimiser leurs systèmes agricoles. Grâce à notre expertise et à ces collaborations stratégiques, nous sommes en mesure de vous offrir un soutien commercial et technique de premier ordre.
 </p>
-      <List spacing={15} textColor="black" fontSize="medium" fontWeight="500">
+      {/* <List spacing={15} textColor="black" fontSize="medium" fontWeight="500">
         <ListItem className="flex items-center">
             <ListIcon as={AiFillCheckCircle} color='#46C7C7' className="mr-2 mb-1" />
             Meilleure qualite 
@@ -29,7 +30,7 @@ d'une équipe complète.
             <ListIcon as={AiFillCheckCircle} color='#46C7C7' className="mr-2 mb-1" />
             Satisfaction client
         </ListItem>
-        </List>
+        </List> */}
       
     </div>
   </div>

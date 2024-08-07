@@ -11,7 +11,7 @@ function AboutForPage() {
     <div className="content md:mt-[-55px]">
       <h4 style={{textTransform:"uppercase"}}>PRéSENTATION</h4>
       <h2>Qui sommes nous?</h2>
-      <p className='d pr-7'>Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.</p>
+      <p className='d pr-7' style={{textAlign: "justify"}}>Blooming Agri Africa est une entreprise opérant dans le secteur agricole, notamment dans des projets intégrés.</p>
       <a href="/propos" className="btn btn-style btn-outline-light mt-sm-5 mt-4" style={{background:"#46C7C7"}}>
                 Voir Plus
               </a>      

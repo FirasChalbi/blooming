@@ -130,7 +130,7 @@ header .navigation .navigation-items a:hover:before{
 /* Home section */
 
 section{
-  padding: 100px 8%;
+  padding: 100px 7%;
 }
 
 .home{
@@ -297,7 +297,7 @@ section{
   }
 
   section{
-    padding: 100px 8%;
+    padding: 100px 7%;
   }
 
   .home .media-icons{
@@ -885,7 +885,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @media (max-width: 1040px){
   .AboutP{
-    height: 901PX;
+    height: 100%;
   }
 }
 .AboutP{
@@ -1021,7 +1021,7 @@ body {
   padding: 60px 0 30px 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 980px) {
   .row3 {
     display: flex;
     flex-direction: row;
@@ -1584,7 +1584,7 @@ body {
 .containerAbout{
   display: flex;
   flex-wrap: wrap;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 #about .about-text h2 {
@@ -2320,9 +2320,9 @@ p.vhny-para {
 }
 
 .contentRight .content p {
-  font-size: 16px;
+  font-size: 15px;
   color: #343434;
-  line-height: 28px;
+  line-height: 21px;
   padding-bottom: 10px
 }
 
@@ -2512,7 +2512,9 @@ p.saas-para {
 @media (min-width:992px) {
 .col-lg-6 {
   flex: 0 0 auto;
-  width: 50%
+  width: 49%;
+  text-align: justify;
+
 }
 }
 

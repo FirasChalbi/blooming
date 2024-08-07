@@ -20,11 +20,11 @@ export default function WhyChooseUs() {
               <div className="card img">
                 <div className="card-body img">
                   <a href="#url" className="d-block zoom radius-image">
-                    <img src="https://wp.w3layouts.com/agrowfarm/wp-content/themes/agrowfarm/assets/images/a2.jpg" alt="" className="img-fluid radius-image" />
+                  <img src="/bloomimg/DJI_0750.jpg" alt="" className="img-fluid radius-image"/>
                   </a>
                   <div className="blog-des mt-4">
                     <h5 className="card-title mt-4">Nos Missions</h5>
-                    <p className="card-text">Notre mission est de fournir des solutions intégrées et de haute qualité pour une agriculture intelligente et hautement productive. Nous offrons un soutien et des conseils à toutes les étapes de la mise en œuvre du projet, dans le but d&apos;améliorer la qualité de production et d&apos;augmenter la productivité, tout en garantissant des rendements financiers pour nos investisseurs.</p>
+                    <p className="card-text" style={{textAlign: "justify"}}>Notre mission est de fournir des solutions intégrées et de haute qualité pour une agriculture intelligente et hautement productive. Nous offrons un soutien et des conseils à toutes les étapes de la mise en œuvre du projet, dans le but d&apos;améliorer la qualité de production et d&apos;augmenter la productivité, tout en garantissant des rendements financiers pour nos investisseurs.</p>
                   </div>
                 </div>
               </div>
@@ -33,11 +33,11 @@ export default function WhyChooseUs() {
               <div className="card img">
                 <div className="card-body img">
                   <a href="#url" className="d-block zoom radius-image">
-                    <img src="https://wp.w3layouts.com/agrowfarm/wp-content/themes/agrowfarm/assets/images/a3.jpg" alt="" className="img-fluid radius-image" />
+                    <img src="/bloomimg/DSC_9303.jpg" alt="" className="img-fluid radius-image"/>
                   </a>
                   <div className="blog-des mt-3">
                     <h5 className="card-title mt-4">Notre Vision</h5>
-                    <p className="card-text ">Nous aspirons à être des pionniers dans la promotion d&apos;une agriculture intelligente et durable, fournissant des solutions de haute qualité pour une alimentation saine. En améliorant la qualité de production et en augmentant la productivité, nous visons à nourrir le monde tout en préservant notre planète pour les générations futures.</p>
+                    <p className="card-text "  style={{textAlign: "justify"}}>Nous aspirons à être des pionniers dans la promotion d&apos;une agriculture intelligente et durable, fournissant des solutions de haute qualité pour une alimentation saine. En améliorant la qualité de production et en augmentant la productivité, nous visons à nourrir le monde tout en préservant notre planète pour les générations futures.</p>
                   </div>
                 </div>
               </div>
