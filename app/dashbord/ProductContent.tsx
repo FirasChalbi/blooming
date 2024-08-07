@@ -34,6 +34,7 @@ interface Product {
   description: string;
   category: string;
   images: string[];
+  pdfs: string[];
 }
 
 const ProductContent: React.FC = () => {
@@ -41,10 +42,18 @@ const ProductContent: React.FC = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [images, setImages] = useState<string[]>([]);
+  const [pdfs, setPdfs] = useState<File[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [otherCategory, setOtherCategory] = useState("");
   const router = useRouter();
 
+  const truncateDescription = (description: string, maxLength: number) => {
+    if (description.length <= maxLength) {
+      return description;
+    }
+    return description.slice(0, maxLength) + "...";
+  };
+  
   const onDrop = async (acceptedFiles: File[]) => {
     const uploadedImages = await Promise.all(
       acceptedFiles.map((file) => uploadStagedFile(file))
@@ -63,20 +72,35 @@ const ProductContent: React.FC = () => {
     setImages((prevImages) => prevImages.filter((url) => url !== urlToDelete));
   };
 
+  const handlePdfUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      setPdfs(Array.from(files));
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+  
+    const formData = new FormData();
+    pdfs.forEach((pdf) => {
+      formData.append("pdfs", pdf);
+    });
+  
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("category", category === "Other" ? otherCategory : category);
+    formData.append("images", JSON.stringify(images));
+  
     try {
       const response = await fetch("/api/products", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, description, category: category === "Other" ? otherCategory : category, images }),
+        body: formData,
       });
       if (!response.ok) {
         throw new Error("Failed to create product");
       }
-
+  
       Store.addNotification({
         title: "Success",
         message: "Product created successfully",
@@ -90,14 +114,15 @@ const ProductContent: React.FC = () => {
           onScreen: true,
         },
       });
-
+  
       fetchProducts();
-
+  
       setName("");
       setDescription("");
       setCategory("");
       setOtherCategory("");
       setImages([]);
+      setPdfs([]);
     } catch (error) {
       console.error("Error creating product:", error);
       Store.addNotification({
@@ -115,7 +140,7 @@ const ProductContent: React.FC = () => {
       });
     }
   };
-
+  
   const fetchProducts = async () => {
     try {
       const response = await fetch("/api/products");
@@ -272,6 +297,17 @@ const ProductContent: React.FC = () => {
                   )}
                 </div>
               </FormControl>
+              <FormControl>
+                <FormLabel fontWeight="medium" color="black">
+                  PDFs
+                </FormLabel>
+                <input type="file" accept=".pdf" multiple onChange={handlePdfUpload} />
+                <div style={{ marginTop: "10px" }}>
+                  {pdfs.map((pdf, index) => (
+                    <div key={index}>{pdf.name}</div>
+                  ))}
+                </div>
+              </FormControl>
               <Button type="submit" colorScheme="blue" width="full">
                 Submit
               </Button>
@@ -300,13 +336,14 @@ const ProductContent: React.FC = () => {
                 <Th>Description</Th>
                 <Th>Category</Th>
                 <Th>Images</Th>
+                <Th>PDFs</Th>
               </Tr>
             </Thead>
             <Tbody>
               {products.map((product) => (
                 <Tr key={product._id}>
                   <Td>{product.name}</Td>
-                  <Td>{product.description}</Td>
+                  <Td>{truncateDescription(product.description, 200)}</Td>
                   <Td>{product.category}</Td>
                   <Td>
                     {product.images.map((url, imgIndex) => (
@@ -317,6 +354,13 @@ const ProductContent: React.FC = () => {
                         width={50}
                         height={50}
                       />
+                    ))}
+                  </Td>
+                  <Td>
+                    {product.pdfs.map((pdf, pdfIndex) => (
+                      <a key={pdfIndex} href={`/assets/${pdf}`} target="_blank" rel="noopener noreferrer">
+                        {pdf}
+                      </a>
                     ))}
                   </Td>
                 </Tr>

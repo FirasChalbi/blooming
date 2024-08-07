@@ -59,6 +59,12 @@ const HomeContent = () => {
       console.error("Error deleting product:", error);
     }
   };
+  const truncateDescription = (description: string, maxLength: number) => {
+    if (description.length <= maxLength) {
+      return description;
+    }
+    return description.slice(0, maxLength) + "...";
+  };
 
   const sliderSettings = {
     dots: true,
@@ -118,7 +124,7 @@ const HomeContent = () => {
                 {product.name}
               </Box>
               <Box color="gray.600">{product.category}</Box>
-              <Box>{product.description}</Box>
+              <Box>{truncateDescription(product.description, 200)}</Box>
             </Box>
             <Flex>
               <Button

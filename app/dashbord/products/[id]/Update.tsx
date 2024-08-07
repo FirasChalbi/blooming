@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-
 import {
   Box,
   Button,
@@ -26,6 +25,8 @@ const ModifyProduct = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [images, setImages] = useState<string[]>([]);
+  const [pdfs, setPdfs] = useState<File[]>([]);
+  const [existingPdfs, setExistingPdfs] = useState<string[]>([]);
   const [otherCategory, setOtherCategory] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -49,20 +50,35 @@ const ModifyProduct = () => {
     setImages((prevImages) => prevImages.filter((url) => url !== urlToDelete));
   };
 
+  const handlePdfUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      setPdfs(Array.from(files));
+    }
+  };
+
+  const handleDeletePdf = (pdfToDelete: string) => {
+    setExistingPdfs((prevPdfs) => prevPdfs.filter((pdf) => pdf !== pdfToDelete));
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    const formData = new FormData();
+    pdfs.forEach((pdf) => {
+      formData.append("pdfs", pdf);
+    });
+
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("category", category === "Other" ? otherCategory : category);
+    formData.append("images", JSON.stringify(images));
+    formData.append("existingPdfs", JSON.stringify(existingPdfs));
+
     try {
       const response = await fetch(`/api/products/product/${productId}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          description,
-          category: category === "Other" ? otherCategory : category,
-          images,
-        }),
+        body: formData,
       });
       if (!response.ok) {
         throw new Error("Failed to update product");
@@ -82,7 +98,7 @@ const ModifyProduct = () => {
         },
       });
 
-      router.push("/dashbord"); // Redirect to products list or another page
+      router.push("/dashbord");
     } catch (error) {
       console.error("Error updating product:", error);
       Store.addNotification({
@@ -109,6 +125,7 @@ const ModifyProduct = () => {
       setDescription(product.description);
       setCategory(product.category);
       setImages(product.images);
+      setExistingPdfs(product.pdfs || []);
     } catch (error) {
       console.error("Error fetching product details:", error);
     }
@@ -130,10 +147,10 @@ const ModifyProduct = () => {
   return (
     <>
       <ReactNotifications />
-      <Box p={4} bg="#f8f9f8" >
+      <Box p={4} bg="#f8f9f8">
         <Box
           maxW="800px"
-          mx="auto" 
+          mx="auto"
           border="1px"
           borderColor="gray.200"
           borderRadius="md"
@@ -142,153 +159,186 @@ const ModifyProduct = () => {
           color="black"
           shadow="md"
         >
-          <Box borderBottom="1px" borderColor="gray.200" pb={4} mb={6} style={{borderColor:"black"}}>
+          <Box borderBottom="1px" borderColor="gray.200" pb={4} mb={6} style={{ borderColor: "black" }}>
             <Box fontWeight="medium" fontSize="lg" color="black" mb={5}>
               Modify Product
             </Box>
-          <form onSubmit={handleSubmit}>
-            <VStack spacing={4} >
-              <FormControl>
-                <FormLabel fontWeight="medium" color="black">
-                  Name
-                </FormLabel>
-                <Input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Product Name"
-                  borderColor="gray.300"
-                  focusBorderColor="blue.500"
-                  size="md"
-                  mt={1} 
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel fontWeight="medium" color="black">
-                  Description
-                </FormLabel>
-                <Textarea
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Product Description"
-                  borderColor="gray.300"
-                  focusBorderColor="blue.500"
-                  rows={6}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel fontWeight="medium" color="black">
-                  Category
-                </FormLabel>
-                <Select
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  placeholder="Select Category"
-                  borderColor="gray.300"
-                  focusBorderColor="blue.500"
-                >
-                  <option value="Aqua 4d">Aqua 4d</option>
-                  <option value="Metzer">Metzer</option>
-                  <option value="Deutz fahr">Deutz fahr</option>
-                  <option value="Kiotti">Kiotti</option>
-                  <option value="Kali k+s">Kali k+s</option>
-                  <option value="Irritech filtration">Irritech filtration</option>
-                  <option value="Other">Other</option>
-                </Select>
-              </FormControl>
-              {category === "Other" && (
+            <form onSubmit={handleSubmit}>
+              <VStack spacing={4}>
                 <FormControl>
                   <FormLabel fontWeight="medium" color="black">
-                    Other Category
+                    Name
                   </FormLabel>
                   <Input
-                    value={otherCategory}
-                    onChange={(e) => setOtherCategory(e.target.value)}
-                    placeholder="Enter Category"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Product Name"
                     borderColor="gray.300"
                     focusBorderColor="blue.500"
                     size="md"
-                    mt={1} 
+                    mt={1}
                   />
                 </FormControl>
-              )}
-              <FormControl>
-                <FormLabel fontWeight="medium" color="black">
-                  Images
-                </FormLabel>
-                <div
-  onClick={() => fileInputRef.current?.click()}
-  onDrop={(e) => {
-    e.preventDefault();
-    handleFileChange(Array.from(e.dataTransfer.files));
-  }}
-  onDragOver={(e) => e.preventDefault()}
-  style={{
-    position: "relative",
-    padding: "16px",
-    border: "2px dashed #ccc",
-    borderRadius: "8px",
-    textAlign: "center",
-    cursor: "pointer",
-    backgroundColor: "#f9f9f9",
-  }}
->
-<input
-  ref={fileInputRef}
-  type="file"
-  multiple
-  accept="image/*"
-  onChange={(e) => {
-    const files = e.target.files;
-    if (files) {
-      handleFileChange(Array.from(files));
-    }
-  }}
-  style={{ display: "none" }}
-/>
-  {images.length > 0 ? (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-      {images.map((url, index) => (
-        <div key={index} style={{ position: "relative" }}>
-          <img
-            src={url}
-            alt={`Uploaded ${index}`}
-            style={{
-              width: "100px",
-              height: "100px",
-              objectFit: "cover",
-              borderRadius: "4px",
-            }}
-          />
-          <button
-            style={{
-              position: "absolute",
-              top: "8px",
-              right: "8px",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              padding: "4px",
-              borderRadius: "50%",
-              backgroundColor: "#fff",
-            }}
-            onClick={() => handleDeleteImage(url)}
-          >
-            <IoClose size={20} />
-          </button>
-        </div>
-      ))}
-    </div>
-  ) : (
-    <p>Drag & drop an image. Recommended size 300 x 300</p>
-  )}
-</div>
-
-              </FormControl>
-              <Button type="submit" colorScheme="blue" width="full">
-                Update Product
-              </Button>
-            </VStack>
-          </form>
+                <FormControl>
+                  <FormLabel fontWeight="medium" color="black">
+                    Description
+                  </FormLabel>
+                  <Textarea
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Product Description"
+                    borderColor="gray.300"
+                    focusBorderColor="blue.500"
+                    rows={6}
+                  />
+                </FormControl>
+                <FormControl>
+                  <FormLabel fontWeight="medium" color="black">
+                    Category
+                  </FormLabel>
+                  <Select
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    placeholder="Select Category"
+                    borderColor="gray.300"
+                    focusBorderColor="blue.500"
+                  >
+                    <option value="Aqua 4d">Aqua 4d</option>
+                    <option value="Metzer">Metzer</option>
+                    <option value="Deutz fahr">Deutz fahr</option>
+                    <option value="Kiotti">Kiotti</option>
+                    <option value="Kali k+s">Kali k+s</option>
+                    <option value="Irritech filtration">Irritech filtration</option>
+                    <option value="Other">Other</option>
+                  </Select>
+                </FormControl>
+                {category === "Other" && (
+                  <FormControl>
+                    <FormLabel fontWeight="medium" color="black">
+                      Other Category
+                    </FormLabel>
+                    <Input
+                      value={otherCategory}
+                      onChange={(e) => setOtherCategory(e.target.value)}
+                      placeholder="Enter Category"
+                      borderColor="gray.300"
+                      focusBorderColor="blue.500"
+                      size="md"
+                      mt={1}
+                    />
+                  </FormControl>
+                )}
+                <FormControl>
+                  <FormLabel fontWeight="medium" color="black">
+                    Images
+                  </FormLabel>
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    onDrop={(e) => {
+                      e.preventDefault();
+                      handleFileChange(Array.from(e.dataTransfer.files));
+                    }}
+                    onDragOver={(e) => e.preventDefault()}
+                    style={{
+                      position: "relative",
+                      padding: "16px",
+                      border: "2px dashed #ccc",
+                      borderRadius: "8px",
+                      textAlign: "center",
+                      cursor: "pointer",
+                      backgroundColor: "#f9f9f9",
+                    }}
+                  >
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      multiple
+                      accept="image/*"
+                      onChange={(e) => {
+                        const files = e.target.files;
+                        if (files) {
+                          handleFileChange(Array.from(files));
+                        }
+                      }}
+                      style={{ display: "none" }}
+                    />
+                    {images.length > 0 ? (
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                        {images.map((url, index) => (
+                          <div key={index} style={{ position: "relative" }}>
+                            <img
+                              src={url}
+                              alt={`Uploaded ${index}`}
+                              style={{
+                                width: "100px",
+                                height: "100px",
+                                objectFit: "cover",
+                                borderRadius: "4px",
+                              }}
+                            />
+                            <button
+                              style={{
+                                position: "absolute",
+                                top: "8px",
+                                right: "8px",
+                                background: "transparent",
+                                border: "none",
+                                cursor: "pointer",
+                                padding: "4px",
+                                borderRadius: "50%",
+                                backgroundColor: "#fff",
+                              }}
+                              onClick={() => handleDeleteImage(url)}
+                            >
+                              <IoClose size={20} />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p>Drag & drop an image. Recommended size 300 x 300</p>
+                    )}
+                  </div>
+                </FormControl>
+                <FormControl>
+                  <FormLabel fontWeight="medium" color="black">
+                    PDFs
+                  </FormLabel>
+                  <input type="file" accept=".pdf" multiple onChange={handlePdfUpload} />
+                  <div style={{ marginTop: "10px" }}>
+                    {existingPdfs.map((pdf, index) => (
+                      <div key={index} style={{ position: "relative" }}>
+                        <a href={`/assets/${pdf}`} target="_blank" rel="noopener noreferrer">
+                          {pdf}
+                        </a>
+                        <button
+                          style={{
+                            position: "absolute",
+                            top: "8px",
+                            right: "8px",
+                            background: "transparent",
+                            border: "none",
+                            cursor: "pointer",
+                            padding: "4px",
+                            borderRadius: "50%",
+                            backgroundColor: "#fff",
+                          }}
+                          onClick={() => handleDeletePdf(pdf)}
+                        >
+                          <IoClose size={20} />
+                        </button>
+                      </div>
+                    ))}
+                    {pdfs.map((pdf, index) => (
+                      <div key={index}>{pdf.name}</div>
+                    ))}
+                  </div>
+                </FormControl>
+                <Button type="submit" colorScheme="blue" width="full">
+                  Update Product
+                </Button>
+              </VStack>
+            </form>
           </Box>
         </Box>
       </Box>

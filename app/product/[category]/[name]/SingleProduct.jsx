@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import TopTitle from '../../../../component/common/fields/TopTitle';
 import Index from '../../../../component/common/fields/Index';
-
+import { FaFilePdf } from "react-icons/fa6";
 
 function Page({ product }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -20,8 +20,19 @@ function Page({ product }) {
   };
 
 
+  const handleDownloadPdf = (pdfName) => {
+    const pdfUrl = `/assets/${pdfName}`;
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = pdfName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const thumbnailsData = product ? product.images : [];
+  const pdfsData = product ? product.pdfs : [];
+
 
   return (
     <div className="bg-gray-100">
@@ -60,9 +71,11 @@ function Page({ product }) {
                 <p className="product-name">{product.name}</p>
                 <div className="product-description" dangerouslySetInnerHTML={{ __html: product.description.replace(/\n/g, '<br>') }} />
                 <div className="product-cart">
-                  <div className="cart-add">
-                    <img src="/images/info.png" alt="Cart" className='h-8'/> Description
-                  </div>
+                  {pdfsData.length > 0 && (
+                    <div className="cart-add" onClick={() => handleDownloadPdf(pdfsData[0])}>
+                      <FaFilePdf alt="Cart" style={{ height: "25px", width: "25px", marginRight: "30px" }} /> Télécharger PDF
+                    </div>
+                  )}
                 </div>
               </div>
             )}
