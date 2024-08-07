@@ -11,7 +11,7 @@ export const POST = async (req, res) => {
   const name = formData.get("name");
   const description = formData.get("description");
   const category = formData.get("category");
-  const imageArray = JSON.parse(formData.get("images") as string);
+  const imageArray = JSON.parse(formData.get("images"));
   const pdfFiles = formData.getAll("pdfs");
 
   if (!name || !description || !category) {
