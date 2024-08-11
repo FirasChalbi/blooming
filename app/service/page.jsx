@@ -42,11 +42,11 @@ function Page() {
                 <h2>Projets clé en main</h2>
                 <p>Offrez des solutions complètes et sur mesure pour les projets agricoles, de la conception à la réalisation.</p>
 
-                <p className="banner__link-wrapper">
+                {/* <p className="banner__link-wrapper">
                   <span className="banner__link">
                     <i>See More</i>
                   </span>
-                </p>
+                </p> */}
               </div>
             </div>
           </a>
@@ -60,11 +60,11 @@ function Page() {
                 <h2>Assistance technique</h2>
                 <p>Avant et pendant la mise en œuvre du projet, basée sur des technologies avancées. </p>
 
-                <p className="banner__link-wrapper">
+                {/* <p className="banner__link-wrapper">
                   <span className="banner__link">
                     <i>See More</i>
                   </span>
-                </p>
+                </p> */}
               </div>
             </div>
           </a>
@@ -78,11 +78,11 @@ function Page() {
                 <h2>Préparation de la terre</h2>
                 <p>Par labourage en profondeur et analyse du sol. </p>
 
-                <p className="banner__link-wrapper">
+                {/* <p className="banner__link-wrapper">
                   <span className="banner__link">
                     <i>See More</i>
                   </span>
-                </p>
+                </p> */}
               </div>
             </div>
           </a>
@@ -96,11 +96,11 @@ function Page() {
                 <h2>Installation de réseaux d&rsquo;irrigation souterrains.</h2>
                 <p>Mettez en place des systèmes d&apos;irrigation sophistiqués et discrets pour assurer une distribution efficace de l&apos;eau aux cultures.</p>
 
-                <p className="banner__link-wrapper">
+                {/* <p className="banner__link-wrapper">
                   <span className="banner__link">
                     <i>See More</i>
                   </span>
-                </p>
+                </p> */}
               </div>
             </div>
           </a>
@@ -114,11 +114,11 @@ function Page() {
                 <h2>Installation de stations de filtration d&rsquo;eau et de fertilisation.</h2>
                 <p>Pour garantir la qualité de l&apos;eau et fournir des nutriments essentiels aux cultures.</p>
 
-                <p className="banner__link-wrapper">
-                  <span className="banner__link">
-                    <i>See More</i>
-                  </span>
-                </p>
+                  {/* <p className="banner__link-wrapper">
+                    <span className="banner__link">
+                      <i>See More</i>
+                    </span>
+                  </p> */}
               </div>
             </div>
           </a>
